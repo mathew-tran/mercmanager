@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://c5pco1554jurt"]
+
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Unit.gd" id="1_6mgsn"]
+[ext_resource type="Texture2D" uid="uid://dhpd08noiq48g" path="res://Art/Characters/Archie.png" id="1_u5beb"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="2_8n3i5"]
+
+[sub_resource type="Resource" id="Resource_l7xi7"]
+script = ExtResource("2_8n3i5")
+HP = 8
+Damage = 4
+Defense = 2
+Speed = 5
+Crit = 4
+
+[resource]
+script = ExtResource("1_6mgsn")
+Name = "Archie"
+Face = ExtResource("1_u5beb")
+StatValues = SubResource("Resource_l7xi7")

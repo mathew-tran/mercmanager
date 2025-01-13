@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://63bfigroloi1"]
+
+[ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Gregor.png" id="1_0qnbx"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Unit.gd" id="1_f3kih"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="2_fikl4"]
+
+[sub_resource type="Resource" id="Resource_xmchx"]
+script = ExtResource("2_fikl4")
+HP = 10
+Damage = 8
+Defense = 2
+Speed = 3
+Crit = 1
+
+[resource]
+script = ExtResource("1_f3kih")
+Name = "Gregor"
+Face = ExtResource("1_0qnbx")
+StatValues = SubResource("Resource_xmchx")
