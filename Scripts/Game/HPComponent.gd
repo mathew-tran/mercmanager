@@ -14,3 +14,6 @@ func Setup(char : Character):
 	
 func GetHealthString():
 	return str(Health) + "/" + str(MaxHealth)
+
+func GetHealthPercent() -> float:
+	return float(Health) / float(MaxHealth)

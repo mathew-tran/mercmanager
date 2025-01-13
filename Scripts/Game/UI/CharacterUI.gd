@@ -8,7 +8,7 @@ func Setup(char : Character):
 	$Name.text = char.CharacterData.Name
 	char.GetHealthComponent().Setup(char)
 	char.GetHealthComponent().Update.connect(OnUpdate)
-	if char.bIsEnemy:
+	if char.Team == Character.TEAM.ENEMY:
 		$Frame.modulate = "c93864ff"
 	else:
 		$Frame.modulate = "35cbc8ff"
@@ -16,6 +16,7 @@ func Setup(char : Character):
 	
 func OnUpdate():
 	$HP/Label.text = CharacterRef.GetHealthComponent().GetHealthString()
+	$HP.value = CharacterRef.GetHealthComponent().GetHealthPercent() * 100
 	
 func Tell(message):
 	if message != "":

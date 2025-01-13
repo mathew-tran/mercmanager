@@ -2,11 +2,14 @@ extends Node2D
 
 class_name Character
 
-@export var CharacterData : Unit
+@export var CharacterData : CharacterInfo
 
-@export var bIsEnemy = false
+@export var Team : TEAM
 
-
+enum TEAM {
+	PLAYER,
+	ENEMY
+}
 
 func _ready():
 	Setup()
@@ -14,7 +17,9 @@ func _ready():
 func Setup():
 	$CharacterUI.Setup(self)
 	await $CharacterUI.Tell("")
-	$CharacterUI.Tell("HELLO!!")
 
 func GetHealthComponent() -> HealthComponent:
 	return $HPComponent
+	
+func _process(delta):
+	$AIController.Run(self, delta)

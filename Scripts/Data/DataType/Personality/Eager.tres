@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Personality" load_steps=2 format=3 uid="uid://crk2pemctxwrb"]
+
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Personality.gd" id="1_sakxp"]
+
+[resource]
+script = ExtResource("1_sakxp")
+Name = "Eager"
+Description = "Will attack the closest enemy"

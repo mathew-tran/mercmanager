@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnvuj4natuhv0"]
+[gd_scene load_steps=11 format=3 uid="uid://dnvuj4natuhv0"]
 
 [ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Gregor.png" id="1_oxqv2"]
 [ext_resource type="Script" path="res://Scripts/Game/Character.gd" id="1_vsemf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Game/UI/CharacterUI.gd" id="4_a23w2"]
 [ext_resource type="PackedScene" uid="uid://bpeqmlf4rw473" path="res://Prefabs/SpeechBubble.tscn" id="5_755dl"]
 [ext_resource type="Script" path="res://Scripts/Game/HPComponent.gd" id="5_jpujw"]
+[ext_resource type="Script" path="res://Scripts/Game/AIController.gd" id="7_601cj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lau12"]
 bg_color = Color(0.105882, 0.0980392, 0.164706, 1)
@@ -16,7 +17,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36x6n"]
 bg_color = Color(0.207843, 0.796078, 0.784314, 1)
 
-[node name="Character" type="Node2D"]
+[node name="Character" type="Node2D" groups=["Unit"]]
 script = ExtResource("1_vsemf")
 
 [node name="CharacterUI" type="Control" parent="."]
@@ -98,3 +99,6 @@ grow_vertical = 1
 
 [node name="HPComponent" type="Node" parent="."]
 script = ExtResource("5_jpujw")
+
+[node name="AIController" type="Node" parent="."]
+script = ExtResource("7_601cj")

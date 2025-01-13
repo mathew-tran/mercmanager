@@ -18,9 +18,9 @@ CharacterData = ExtResource("2_y2y76")
 [node name="Character3" parent="." instance=ExtResource("1_x8yeu")]
 position = Vector2(615, 76)
 CharacterData = ExtResource("3_h4s07")
-bIsEnemy = true
+Team = 1
 
 [node name="Character4" parent="." instance=ExtResource("1_x8yeu")]
 position = Vector2(487, 406)
 CharacterData = ExtResource("3_h4s07")
-bIsEnemy = true
+Team = 1
