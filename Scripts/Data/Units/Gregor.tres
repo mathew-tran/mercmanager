@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=9 format=3 uid="uid://63bfigroloi1"]
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=9 format=3 uid="uid://63bfigroloi1"]
 
 [ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Gregor.png" id="1_0qnbx"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="1_f3kih"]
