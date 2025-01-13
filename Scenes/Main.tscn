@@ -1,8 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://ln4502atjtfy"]
+[gd_scene load_steps=4 format=3 uid="uid://ln4502atjtfy"]
 
 [ext_resource type="PackedScene" uid="uid://dnvuj4natuhv0" path="res://Prefabs/Character.tscn" id="1_x8yeu"]
+[ext_resource type="Resource" uid="uid://c5pco1554jurt" path="res://Scripts/Data/Units/Archie.tres" id="2_y2y76"]
+[ext_resource type="Resource" uid="uid://63bfigroloi1" path="res://Scripts/Data/Units/Gregor.tres" id="3_h4s07"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(78, 100)
 
 [node name="Character" parent="." instance=ExtResource("1_x8yeu")]
+position = Vector2(89, 133)
+CharacterData = ExtResource("2_y2y76")
+
+[node name="Character2" parent="." instance=ExtResource("1_x8yeu")]
+position = Vector2(127, 383)
+CharacterData = ExtResource("2_y2y76")
+
+[node name="Character3" parent="." instance=ExtResource("1_x8yeu")]
+position = Vector2(615, 76)
+CharacterData = ExtResource("3_h4s07")
+bIsEnemy = true
+
+[node name="Character4" parent="." instance=ExtResource("1_x8yeu")]
+position = Vector2(487, 406)
+CharacterData = ExtResource("3_h4s07")
+bIsEnemy = true
