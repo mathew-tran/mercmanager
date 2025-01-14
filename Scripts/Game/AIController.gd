@@ -18,8 +18,15 @@ func Run():
 	bIsRunning = true
 	
 	if CharRef.GetHealthComponent().GetHealthPercent() < .5:
-		CurrentState = AI_STATE.RUN_AWAY
-	pass
+		var result = randf_range(0, 100)
+		if result > 50:
+			CurrentState = AI_STATE.RUN_AWAY
+		else:
+			CurrentState = AI_STATE.ATTACK
+			
+	else:
+		CurrentState = AI_STATE.ATTACK
+
 	
 func _process(delta):
 	if bIsRunning:

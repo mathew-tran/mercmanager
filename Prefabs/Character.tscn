@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnvuj4natuhv0"]
+[gd_scene load_steps=12 format=3 uid="uid://dnvuj4natuhv0"]
 
 [ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Gregor.png" id="1_oxqv2"]
 [ext_resource type="Script" path="res://Scripts/Game/Character.gd" id="1_vsemf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpeqmlf4rw473" path="res://Prefabs/SpeechBubble.tscn" id="5_755dl"]
 [ext_resource type="Script" path="res://Scripts/Game/HPComponent.gd" id="5_jpujw"]
 [ext_resource type="Script" path="res://Scripts/Game/AIController.gd" id="7_601cj"]
+[ext_resource type="Texture2D" uid="uid://cog2etxitefhp" path="res://Art/UI/ActiveSymbol.png" id="8_w3083"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lau12"]
 bg_color = Color(0.105882, 0.0980392, 0.164706, 1)
@@ -102,3 +103,11 @@ script = ExtResource("5_jpujw")
 
 [node name="AIController" type="Node" parent="."]
 script = ExtResource("7_601cj")
+
+[node name="ActiveSymbol" type="TextureRect" parent="."]
+visible = false
+offset_left = -20.0
+offset_top = -137.0
+offset_right = 20.0
+offset_bottom = -81.0
+texture = ExtResource("8_w3083")
