@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Personality" load_steps=2 format=3 uid="uid://vqog3vgg1btv"]
-
-[ext_resource type="Script" path="res://Scripts/Data/DataType/Personality.gd" id="1_q842h"]
-
-[resource]
-script = ExtResource("1_q842h")
-Name = "Distant"
-Description = "Will keep a small distance when attacking"

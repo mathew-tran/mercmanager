@@ -16,10 +16,14 @@ func _ready():
 	
 func Setup():
 	$CharacterUI.Setup(self)
+	$AIController.CharRef = self
 	await $CharacterUI.Tell("")
 
 func GetHealthComponent() -> HealthComponent:
 	return $HPComponent
 	
-func _process(delta):
-	$AIController.Run(self, delta)
+func RunInput():
+	print(name + "(" + CharacterData.Name + " is running)")
+	$AIController.Run()
+	await $AIController.ActionComplete
+	$AIController.bIsRunning = false

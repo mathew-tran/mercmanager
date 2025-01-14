@@ -7,6 +7,5 @@ class_name CharacterInfo
 @export var StatValues : Stats
 
 @export var Moves : MoveList
-@export var UnitPersonality : Personality
 
 var ActivationRange = 400

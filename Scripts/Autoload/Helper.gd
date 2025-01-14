@@ -17,7 +17,7 @@ func GetAllyUnits(charRef : Character):
 			enemies.append(unit)
 	return enemies
 
-func GetClosestEnemy(charRef: Character):
+func GetClosestEnemy(charRef: Character) -> Character:
 	var enemyUnits = GetEnemyUnits(charRef)
 	if len(enemyUnits) == 0:
 		return null
