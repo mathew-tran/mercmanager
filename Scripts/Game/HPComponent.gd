@@ -13,7 +13,7 @@ func Setup(char : Character):
 	Update.emit()
 	
 func GetHealthString():
-	if Health == 0:
+	if Health <= 0:
 		return "KO"
 	return str(Health) + "/" + str(MaxHealth)
 
@@ -23,3 +23,6 @@ func GetHealthPercent() -> float:
 func TakeDamage(amount):
 	Health -= amount
 	Update.emit()
+
+func IsAlive():
+	return Health > 0
