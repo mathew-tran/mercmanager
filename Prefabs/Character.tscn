@@ -36,6 +36,7 @@ offset_left = -9.0
 offset_top = -93.0
 offset_right = 103.0
 offset_bottom = 19.0
+pivot_offset = Vector2(56, 56)
 texture = ExtResource("1_oxqv2")
 
 [node name="Frame" type="TextureRect" parent="CharacterUI"]
@@ -107,7 +108,7 @@ script = ExtResource("7_601cj")
 [node name="ActiveSymbol" type="TextureRect" parent="."]
 visible = false
 offset_left = -20.0
-offset_top = -137.0
+offset_top = -180.0
 offset_right = 20.0
-offset_bottom = -81.0
+offset_bottom = -124.0
 texture = ExtResource("8_w3083")

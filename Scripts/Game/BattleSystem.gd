@@ -16,6 +16,8 @@ func _ready():
 func PlayGame():
 	var index = 0
 	while CurrentState == GAME_STATE.PLAYING:
+		Helper.GetFollowCamera().FocusObject(Characters.get_child(index))
+		await Helper.GetFollowCamera().CloseToObject
 		await Characters.get_child(index).RunInput()
 		
 		

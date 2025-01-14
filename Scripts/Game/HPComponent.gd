@@ -6,7 +6,8 @@ var Health = 0
 var MaxHealth = 0
 
 signal Update
-
+signal TakenDamage
+signal OnDeath
 func Setup(char : Character):
 	Health = char.CharacterData.StatValues.HP
 	MaxHealth = Health
@@ -23,6 +24,9 @@ func GetHealthPercent() -> float:
 func TakeDamage(amount):
 	Health -= amount
 	Update.emit()
+	TakenDamage.emit()
+	if IsAlive() == false:
+		OnDeath.emit()
 
 func IsAlive():
 	return Health > 0

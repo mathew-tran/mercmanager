@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ln4502atjtfy"]
+[gd_scene load_steps=6 format=3 uid="uid://ln4502atjtfy"]
 
 [ext_resource type="Script" path="res://Scripts/Game/BattleSystem.gd" id="1_fnyww"]
 [ext_resource type="PackedScene" uid="uid://dnvuj4natuhv0" path="res://Prefabs/Character.tscn" id="1_x8yeu"]
 [ext_resource type="Resource" uid="uid://c5pco1554jurt" path="res://Scripts/Data/Units/Archie.tres" id="2_y2y76"]
 [ext_resource type="Resource" uid="uid://63bfigroloi1" path="res://Scripts/Data/Units/Gregor.tres" id="3_h4s07"]
+[ext_resource type="Script" path="res://Scripts/Game/FollowCamera.gd" id="5_gxreo"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(78, 100)
@@ -17,16 +18,61 @@ script = ExtResource("1_fnyww")
 position = Vector2(89, 133)
 CharacterData = ExtResource("2_y2y76")
 
+[node name="Character7" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(27, -357)
+CharacterData = ExtResource("2_y2y76")
+
+[node name="Character8" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(-492, 76)
+CharacterData = ExtResource("2_y2y76")
+
+[node name="Character9" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(-455, -379)
+CharacterData = ExtResource("3_h4s07")
+
 [node name="Character2" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
 position = Vector2(127, 383)
 CharacterData = ExtResource("2_y2y76")
 
 [node name="Character3" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(615, 76)
+position = Vector2(885, 17)
 CharacterData = ExtResource("3_h4s07")
 Team = 1
 
 [node name="Character4" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(487, 406)
+position = Vector2(851, 350)
 CharacterData = ExtResource("3_h4s07")
 Team = 1
+
+[node name="Character5" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(1399, 128)
+CharacterData = ExtResource("3_h4s07")
+Team = 1
+
+[node name="Character6" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(1914, 566)
+CharacterData = ExtResource("3_h4s07")
+Team = 1
+
+[node name="Character10" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(2012, 102)
+CharacterData = ExtResource("3_h4s07")
+Team = 1
+
+[node name="Character11" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(1582, 602)
+CharacterData = ExtResource("3_h4s07")
+Team = 1
+
+[node name="Character12" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(1125, 953)
+CharacterData = ExtResource("3_h4s07")
+Team = 1
+
+[node name="Character13" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(520, 966)
+CharacterData = ExtResource("3_h4s07")
+Team = 1
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["FollowCamera"]]
+script = ExtResource("5_gxreo")

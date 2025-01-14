@@ -50,3 +50,8 @@ func GetClosestEnemy(charRef: Character, bIsAlive = true) -> Character:
 				closestEnemy = enemy
 	return closestEnemy
 		
+func GetFollowCamera() -> FollowCamera:
+	var camera = get_tree().get_nodes_in_group("FollowCamera")
+	if camera:
+		return camera[0]
+	return null

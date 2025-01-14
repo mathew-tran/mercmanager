@@ -8,5 +8,5 @@ BaseDamage = 2
 Name = "Arrow Shot"
 PercentChance = 60
 MoveDescription = "Shoots an arrow from a distance"
-MoveRange = 300
+MoveRange = 400
 TimeToActive = 0.5

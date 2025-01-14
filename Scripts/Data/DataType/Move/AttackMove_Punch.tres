@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_oft7b")
-BaseDamage = 3
+BaseDamage = 2
 Name = "Punch"
 PercentChance = 80
 MoveDescription = "Punches the enemy"
-MoveRange = 50
+MoveRange = 100
 TimeToActive = 0.2

@@ -6,16 +6,14 @@ signal ActionComplete
 
 var CharRef : Character
 var bIsRunning = false
-	
 enum AI_STATE {
 	ATTACK,
 	RUN_AWAY
 }
 
 var CurrentState = AI_STATE.ATTACK
-
-func Run():
-	bIsRunning = true
+var MoveToUse : Move
+func Decide():
 	
 	if CharRef.GetHealthComponent().GetHealthPercent() < .5:
 		var result = randf_range(0, 100)
@@ -26,7 +24,21 @@ func Run():
 			
 	else:
 		CurrentState = AI_STATE.ATTACK
+		
+	if CurrentState == AI_STATE.ATTACK:
+		MoveToUse = CharRef.CharacterData.Moves.DecideRandomMove()
+	else:
+		MoveToUse = null
+	
+func Telegraph():
+	match CurrentState:
+		AI_STATE.ATTACK:
+			CharRef.Speak("ATTACK!!!")
+		AI_STATE.RUN_AWAY:
+			CharRef.Speak("TACTICAL RETREAT!")
 
+func Run():
+	bIsRunning = true
 	
 func _process(delta):
 	if bIsRunning:
@@ -41,11 +53,23 @@ func RunAttackAI(delta):
 		if IsCloseToPosition(CharRef, nearestEnemy.global_position) == false:
 			MoveToPosition(CharRef, nearestEnemy.global_position, delta)
 		else:
-			nearestEnemy.GetHealthComponent().TakeDamage(2)
+			bIsRunning = false
+			CharRef.Speak(MoveToUse.Name)
+			await get_tree().create_timer(1.2).timeout
+			if MoveToUse.HasMoveSucceeded() == false:
+				CharRef.Speak("MISSED!")
+				await get_tree().create_timer(1.0).timeout
+			else:
+				nearestEnemy.GetHealthComponent().TakeDamage(CalculateDamage())
+				await nearestEnemy.CompletedTakingDamage
 			ActionComplete.emit()
 	else:
 		ActionComplete.emit()
-		
+
+func CalculateDamage():
+	var damage = (MoveToUse as AttackMove).BaseDamage	
+	damage += CharRef.CharacterData.StatValues.Damage
+	return damage
 func RunAwayAI(delta):
 	var nearestEnemy = Helper.GetClosestEnemy(CharRef)
 	if is_instance_valid(nearestEnemy):
@@ -65,4 +89,7 @@ func MoveAwayFromPosition(charRef: Character, newPosition, delta):
 	charRef.global_position -= direction * 400 * delta
 
 func IsCloseToPosition(charRef : Character, newPosition):
-	return charRef.global_position.distance_to(newPosition) < charRef.CharacterData.ActivationRange
+	if is_instance_valid(MoveToUse):
+		return charRef.global_position.distance_to(newPosition) < MoveToUse.MoveRange
+	else:
+		return charRef.global_position.distance_to(newPosition) < 400
