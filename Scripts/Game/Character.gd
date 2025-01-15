@@ -20,6 +20,7 @@ func Setup():
 	$CharacterUI.Setup(self)
 	$AIController.CharRef = self
 	$HPComponent.TakenDamage.connect(OnTakenDamage)
+	show_behind_parent = true
 
 
 func OnTakenDamage():
@@ -39,6 +40,7 @@ func GetHealthComponent() -> HealthComponent:
 	
 func RunInput():
 	$ActiveSymbol.visible = true
+	show_behind_parent = false
 	print(name + "(" + CharacterData.Name + " is running)")
 	await get_tree().create_timer(.1).timeout
 	$AIController.Decide()
@@ -52,3 +54,4 @@ func RunInput():
 	await get_tree().create_timer(.1).timeout
 	await Speak("")
 	$ActiveSymbol.visible = false
+	show_behind_parent = true

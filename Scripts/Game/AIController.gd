@@ -54,22 +54,13 @@ func RunAttackAI(delta):
 			MoveToPosition(CharRef, nearestEnemy.global_position, delta)
 		else:
 			bIsRunning = false
-			CharRef.Speak(MoveToUse.Name)
-			await get_tree().create_timer(1.2).timeout
-			if MoveToUse.HasMoveSucceeded() == false:
-				CharRef.Speak("MISSED!")
-				await get_tree().create_timer(1.0).timeout
-			else:
-				nearestEnemy.GetHealthComponent().TakeDamage(CalculateDamage())
-				await nearestEnemy.CompletedTakingDamage
+			await MoveToUse.AttemptToDoMove(CharRef, [nearestEnemy])
 			ActionComplete.emit()
 	else:
 		ActionComplete.emit()
 
-func CalculateDamage():
-	var damage = (MoveToUse as AttackMove).BaseDamage	
-	damage += CharRef.CharacterData.StatValues.Damage
-	return damage
+
+	
 func RunAwayAI(delta):
 	var nearestEnemy = Helper.GetClosestEnemy(CharRef)
 	if is_instance_valid(nearestEnemy):

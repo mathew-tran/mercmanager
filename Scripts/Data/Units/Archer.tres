@@ -13,7 +13,7 @@ Move1 = ExtResource("2_7xcmp")
 [sub_resource type="Resource" id="Resource_l7xi7"]
 script = ExtResource("2_8n3i5")
 HP = 12
-Damage = 4
+Damage = 1
 Defense = 1
 Speed = 100
 Crit = 4

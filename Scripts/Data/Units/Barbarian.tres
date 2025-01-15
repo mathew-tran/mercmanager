@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterInfo" load_steps=8 format=3 uid="uid://63bfigroloi1"]
 
-[ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Barbarian.png" id="1_0qnbx"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="1_f3kih"]
+[ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Barbarian.png" id="1_jcwu6"]
 [ext_resource type="Resource" uid="uid://n4wrttcj1v2m" path="res://Scripts/Data/DataType/Move/AttackMove_Punch.tres" id="2_dgm4l"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="2_fikl4"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="3_166m0"]
@@ -13,7 +13,7 @@ Move1 = ExtResource("2_dgm4l")
 [sub_resource type="Resource" id="Resource_xmchx"]
 script = ExtResource("2_fikl4")
 HP = 10
-Damage = 4
+Damage = 1
 Defense = 0
 Speed = 3
 Crit = 1
@@ -21,6 +21,6 @@ Crit = 1
 [resource]
 script = ExtResource("1_f3kih")
 Name = "Barbarian"
-Face = ExtResource("1_0qnbx")
+Face = ExtResource("1_jcwu6")
 StatValues = SubResource("Resource_xmchx")
 Moves = SubResource("Resource_7yqou")

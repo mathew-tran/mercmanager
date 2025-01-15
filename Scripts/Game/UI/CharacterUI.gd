@@ -21,6 +21,9 @@ func OnUpdate():
 	
 func OnDeath():
 	$Face.rotation_degrees = 90
+	modulate = "737373"
+	CharacterRef.z_as_relative = false
+	CharacterRef.z_index = -100
 	
 func Tell(message):
 	if message != "":

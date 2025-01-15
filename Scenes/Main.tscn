@@ -14,14 +14,23 @@ script = ExtResource("1_fnyww")
 
 [node name="Characters" type="Node2D" parent="BattleSystem"]
 
-[node name="Character" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(835, -319)
-CharacterData = ExtResource("3_h4s07")
-
 [node name="Character7" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
 position = Vector2(27, -357)
 CharacterData = ExtResource("2_y2y76")
 Team = 1
+
+[node name="Character8" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(31, -90)
+CharacterData = ExtResource("2_y2y76")
+Team = 1
+
+[node name="Character" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(835, -319)
+CharacterData = ExtResource("3_h4s07")
+
+[node name="Character2" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(1141, 246)
+CharacterData = ExtResource("2_y2y76")
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["FollowCamera"]]
 script = ExtResource("5_gxreo")

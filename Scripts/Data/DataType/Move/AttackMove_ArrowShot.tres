@@ -1,12 +1,22 @@
-[gd_resource type="Resource" script_class="AttackMove" load_steps=2 format=3 uid="uid://dlpbobggkisw3"]
+[gd_resource type="Resource" script_class="AttackMove" load_steps=5 format=3 uid="uid://dlpbobggkisw3"]
 
+[ext_resource type="Texture2D" uid="uid://6x1qee77mdlf" path="res://Art/Projectiles/Arrow.png" id="1_7jcde"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/AttackMove.gd" id="1_pj41w"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveEffect.gd" id="2_jdxjc"]
+
+[sub_resource type="Resource" id="Resource_dh360"]
+script = ExtResource("2_jdxjc")
+MoveImage = ExtResource("1_7jcde")
+Duration = 0.1
+SpawnType = 0
 
 [resource]
 script = ExtResource("1_pj41w")
-BaseDamage = 2
+BaseDamage = 1
+HitAmount = 3
 Name = "Arrow Shot"
 PercentChance = 60
 MoveDescription = "Shoots an arrow from a distance"
 MoveRange = 400
 TimeToActive = 0.5
+Effect = SubResource("Resource_dh360")

@@ -1,12 +1,22 @@
-[gd_resource type="Resource" script_class="AttackMove" load_steps=2 format=3 uid="uid://n4wrttcj1v2m"]
+[gd_resource type="Resource" script_class="AttackMove" load_steps=5 format=3 uid="uid://n4wrttcj1v2m"]
 
+[ext_resource type="Texture2D" uid="uid://b0vrxq3mwb124" path="res://Art/Projectiles/Punch.png" id="1_jk2i4"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/AttackMove.gd" id="1_oft7b"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveEffect.gd" id="2_qicx7"]
+
+[sub_resource type="Resource" id="Resource_qr27u"]
+script = ExtResource("2_qicx7")
+MoveImage = ExtResource("1_jk2i4")
+Duration = 0.3
+SpawnType = 1
 
 [resource]
 script = ExtResource("1_oft7b")
 BaseDamage = 2
+HitAmount = 2
 Name = "Punch"
 PercentChance = 80
 MoveDescription = "Punches the enemy"
 MoveRange = 100
 TimeToActive = 0.2
+Effect = SubResource("Resource_qr27u")
