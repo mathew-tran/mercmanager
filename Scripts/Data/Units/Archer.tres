@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterInfo" load_steps=8 format=3 uid="uid://c5pco1554jurt"]
 
-[ext_resource type="Texture2D" uid="uid://dhpd08noiq48g" path="res://Art/Characters/Archie.png" id="1_u5beb"]
+[ext_resource type="Texture2D" uid="uid://dhpd08noiq48g" path="res://Art/Characters/Archer.png" id="1_lcfoq"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="2_0ufcr"]
 [ext_resource type="Resource" uid="uid://dlpbobggkisw3" path="res://Scripts/Data/DataType/Move/AttackMove_ArrowShot.tres" id="2_7xcmp"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="2_8n3i5"]
@@ -20,7 +20,7 @@ Crit = 4
 
 [resource]
 script = ExtResource("5_auhku")
-Name = "Archie"
-Face = ExtResource("1_u5beb")
+Name = "Archer"
+Face = ExtResource("1_lcfoq")
 StatValues = SubResource("Resource_l7xi7")
 Moves = SubResource("Resource_kaip4")

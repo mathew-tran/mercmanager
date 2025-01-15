@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharacterInfo" load_steps=8 format=3 uid="uid://63bfigroloi1"]
 
-[ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Gregor.png" id="1_0qnbx"]
+[ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Barbarian.png" id="1_0qnbx"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="1_f3kih"]
 [ext_resource type="Resource" uid="uid://n4wrttcj1v2m" path="res://Scripts/Data/DataType/Move/AttackMove_Punch.tres" id="2_dgm4l"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="2_fikl4"]
@@ -20,7 +20,7 @@ Crit = 1
 
 [resource]
 script = ExtResource("1_f3kih")
-Name = "Gregor"
+Name = "Barbarian"
 Face = ExtResource("1_0qnbx")
 StatValues = SubResource("Resource_xmchx")
 Moves = SubResource("Resource_7yqou")

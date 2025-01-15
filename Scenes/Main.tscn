@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Game/BattleSystem.gd" id="1_fnyww"]
 [ext_resource type="PackedScene" uid="uid://dnvuj4natuhv0" path="res://Prefabs/Character.tscn" id="1_x8yeu"]
-[ext_resource type="Resource" uid="uid://c5pco1554jurt" path="res://Scripts/Data/Units/Archie.tres" id="2_y2y76"]
-[ext_resource type="Resource" uid="uid://63bfigroloi1" path="res://Scripts/Data/Units/Gregor.tres" id="3_h4s07"]
+[ext_resource type="Resource" uid="uid://c5pco1554jurt" path="res://Scripts/Data/Units/Archer.tres" id="2_y2y76"]
+[ext_resource type="Resource" uid="uid://63bfigroloi1" path="res://Scripts/Data/Units/Barbarian.tres" id="3_h4s07"]
 [ext_resource type="Script" path="res://Scripts/Game/FollowCamera.gd" id="5_gxreo"]
 
 [node name="Node2D" type="Node2D"]
@@ -25,3 +25,5 @@ Team = 1
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["FollowCamera"]]
 script = ExtResource("5_gxreo")
+
+[node name="Effects" type="Node" parent="." groups=["Effects"]]

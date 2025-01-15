@@ -25,6 +25,7 @@ func TakeDamage(amount):
 	Health -= amount
 	Update.emit()
 	TakenDamage.emit()
+	Helper.CreateText(amount, get_parent().global_position)
 	if IsAlive() == false:
 		OnDeath.emit()
 

@@ -55,3 +55,19 @@ func GetFollowCamera() -> FollowCamera:
 	if camera:
 		return camera[0]
 	return null
+
+func GetEffectsGroup():
+	var effects = get_tree().get_nodes_in_group("Effects")
+	if effects:
+		return effects[0]
+	return null
+	
+	
+func CreateText(text, position):
+	var instance = load("res://Prefabs/UI/DamageText.tscn").instantiate()
+	instance.Setup(text)
+	instance.global_position = position
+	GetEffectsGroup().add_child(instance)
+
+	
+	
