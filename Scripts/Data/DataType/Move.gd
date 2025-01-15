@@ -15,7 +15,7 @@ signal MoveCompleted
 
 func AttemptToDoMove(owner : Character, targets : Array[Character]):
 	owner.Speak(Name)
-	await owner.get_tree().create_timer(1.2).timeout
+	await owner.get_tree().create_timer(.5).timeout
 	await Execute(owner, targets)
 	
 func HasMoveSucceeded():

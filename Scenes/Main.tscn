@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ln4502atjtfy"]
+[gd_scene load_steps=7 format=3 uid="uid://ln4502atjtfy"]
 
 [ext_resource type="Script" path="res://Scripts/Game/BattleSystem.gd" id="1_fnyww"]
 [ext_resource type="PackedScene" uid="uid://dnvuj4natuhv0" path="res://Prefabs/Character.tscn" id="1_x8yeu"]
 [ext_resource type="Resource" uid="uid://c5pco1554jurt" path="res://Scripts/Data/Units/Archer.tres" id="2_y2y76"]
 [ext_resource type="Resource" uid="uid://63bfigroloi1" path="res://Scripts/Data/Units/Barbarian.tres" id="3_h4s07"]
+[ext_resource type="Resource" uid="uid://cbhisiuybw3ln" path="res://Scripts/Data/Enemies/Skeleton.tres" id="4_437b0"]
 [ext_resource type="Script" path="res://Scripts/Game/FollowCamera.gd" id="5_gxreo"]
 
 [node name="Node2D" type="Node2D"]
@@ -17,20 +18,28 @@ script = ExtResource("1_fnyww")
 [node name="Character7" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
 position = Vector2(27, -357)
 CharacterData = ExtResource("2_y2y76")
-Team = 1
 
 [node name="Character8" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(31, -90)
-CharacterData = ExtResource("2_y2y76")
-Team = 1
-
-[node name="Character" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(835, -319)
+position = Vector2(26, -45)
 CharacterData = ExtResource("3_h4s07")
 
-[node name="Character2" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(1141, 246)
+[node name="Character12" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(241, 317)
+CharacterData = ExtResource("3_h4s07")
+
+[node name="Character10" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(-171, -192)
 CharacterData = ExtResource("2_y2y76")
+
+[node name="Character9" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(631, -295)
+CharacterData = ExtResource("4_437b0")
+Team = 1
+
+[node name="Character11" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
+position = Vector2(686, -120)
+CharacterData = ExtResource("4_437b0")
+Team = 1
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["FollowCamera"]]
 script = ExtResource("5_gxreo")

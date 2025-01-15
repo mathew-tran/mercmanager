@@ -25,5 +25,5 @@ func Execute(owner : Character, targets : Array[Character]):
 
 func CalculateDamage(owner: Character):
 	var damage = BaseDamage	
-	damage += owner.CharacterData.StatValues.Damage
+	damage += + randi_range(0, 1 + owner.CharacterData.StatValues.Damage)
 	return damage

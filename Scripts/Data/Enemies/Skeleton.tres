@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=9 format=3 uid="uid://cbhisiuybw3ln"]
+
+[ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="1_57nl1"]
+[ext_resource type="Texture2D" uid="uid://wgt50gdfky0i" path="res://Art/Enemies/Skeleton.png" id="1_gn4vj"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="2_3er53"]
+[ext_resource type="Resource" uid="uid://n4wrttcj1v2m" path="res://Scripts/Data/DataType/Move/AttackMove_Punch.tres" id="2_dvipk"]
+[ext_resource type="Resource" uid="uid://c4h2yf4klqfqr" path="res://Scripts/Data/DataType/Move/AttackMove_Slash.tres" id="3_ejfi4"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="3_hhsmd"]
+
+[sub_resource type="Resource" id="Resource_007vb"]
+script = ExtResource("2_3er53")
+Move1 = ExtResource("2_dvipk")
+Move2 = ExtResource("3_ejfi4")
+
+[sub_resource type="Resource" id="Resource_m4fto"]
+script = ExtResource("3_hhsmd")
+HP = 50
+Damage = 1
+Defense = 1
+Speed = 1
+Crit = 0
+
+[resource]
+script = ExtResource("1_57nl1")
+Name = "Sword Skeleton"
+Face = ExtResource("1_gn4vj")
+StatValues = SubResource("Resource_m4fto")
+Moves = SubResource("Resource_007vb")

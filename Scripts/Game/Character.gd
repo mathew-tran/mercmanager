@@ -45,7 +45,7 @@ func RunInput():
 	await get_tree().create_timer(.1).timeout
 	$AIController.Decide()
 	$AIController.Telegraph()
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(.4).timeout
 	$AIController.Run()
 	await $AIController.ActionComplete
 	

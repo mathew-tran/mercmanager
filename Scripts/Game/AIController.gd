@@ -31,9 +31,10 @@ func Decide():
 		MoveToUse = null
 	
 func Telegraph():
+	
 	match CurrentState:
 		AI_STATE.ATTACK:
-			CharRef.Speak("ATTACK!!!")
+			pass
 		AI_STATE.RUN_AWAY:
 			CharRef.Speak("TACTICAL RETREAT!")
 
@@ -73,11 +74,11 @@ func RunAwayAI(delta):
 		
 func MoveToPosition(charRef: Character, newPosition, delta):
 	var direction = (newPosition - charRef.global_position).normalized()
-	charRef.global_position += direction * 400 * delta
+	charRef.global_position += direction * 600 * delta
 	
 func MoveAwayFromPosition(charRef: Character, newPosition, delta):
 	var direction = (newPosition - charRef.global_position).normalized()
-	charRef.global_position -= direction * 400 * delta
+	charRef.global_position -= direction * 600 * delta
 
 func IsCloseToPosition(charRef : Character, newPosition):
 	if is_instance_valid(MoveToUse):
