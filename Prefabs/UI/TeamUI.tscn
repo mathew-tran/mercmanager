@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cttiymsodcvro" path="res://Prefabs/UI/TeamMemberSlot.tscn" id="1_ijruc"]
 [ext_resource type="Script" path="res://Scripts/Game/UI/TeamUI.gd" id="1_s632c"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="2_3hmp4"]
-[ext_resource type="Resource" uid="uid://63bfigroloi1" path="res://Scripts/Data/Units/Barbarian.tres" id="3_x5s0a"]
+[ext_resource type="Resource" uid="uid://63bfigroloi1" path="res://Scripts/Data/PlayerPogs/Barbarian.tres" id="3_x5s0a"]
 
 [node name="Team" type="VBoxContainer"]
 offset_left = 130.0

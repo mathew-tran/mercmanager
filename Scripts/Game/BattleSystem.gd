@@ -19,6 +19,7 @@ func StartRound():
 	await KillExistingCharacters()
 	await SpawnInTeam(Character.TEAM.PLAYER)
 	await SpawnInTeam(Character.TEAM.ENEMY)
+	CurrentState = GAME_STATE.PLAYING
 	PlayGame()
 	
 func KillExistingCharacters():
@@ -45,6 +46,7 @@ func SpawnInTeam(teamType):
 			Characters.add_child(instance)
 			
 	await get_tree().process_frame
+	Helper.GetFollowCamera().FocusObject(PlayerSpawns.get_child(0).GetSpawnPosition())
 	
 	
 func PlayGame():

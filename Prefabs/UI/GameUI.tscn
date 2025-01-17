@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://3l11qm3o02te"]
+[gd_scene load_steps=9 format=3 uid="uid://3l11qm3o02te"]
 
 [ext_resource type="PackedScene" uid="uid://8fedrthhcdfm" path="res://Prefabs/UI/TeamUI.tscn" id="1_0gone"]
 [ext_resource type="Script" path="res://Scripts/Game/UI/GameUI.gd" id="1_442ia"]
 [ext_resource type="Texture2D" uid="uid://wiqyhbyllo76" path="res://Art/UI/PlayButton.png" id="2_h8wha"]
+[ext_resource type="Script" path="res://Scripts/Game/Shop.gd" id="2_takq8"]
+[ext_resource type="PackedScene" uid="uid://qu1ysjysh7mu" path="res://Prefabs/UI/PurchasePogButton.tscn" id="4_t5kl4"]
+[ext_resource type="Texture2D" uid="uid://e2c4066hnaa5" path="res://Art/Coin.png" id="5_k530y"]
+[ext_resource type="Script" path="res://Scripts/Game/UI/PlayerCoinText.gd" id="5_qh772"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnei0"]
 bg_color = Color(0.00453645, 0.00453645, 0.00453644, 1)
@@ -10,13 +14,14 @@ bg_color = Color(0.00453645, 0.00453645, 0.00453644, 1)
 [node name="GameUI" type="CanvasLayer"]
 script = ExtResource("1_442ia")
 
-[node name="Shop" type="Panel" parent="."]
+[node name="Shop" type="Panel" parent="." groups=["Shop"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cnei0")
+script = ExtResource("2_takq8")
 
 [node name="Team" parent="Shop" groups=["PlayerTeam"] instance=ExtResource("1_0gone")]
 layout_mode = 0
@@ -24,6 +29,41 @@ offset_left = 106.0
 offset_top = 73.0
 offset_right = 486.0
 offset_bottom = 499.0
+
+[node name="Stock" type="HBoxContainer" parent="Shop"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 116.0
+offset_right = 1068.0
+offset_bottom = 306.0
+
+[node name="Button" parent="Shop/Stock" instance=ExtResource("4_t5kl4")]
+layout_mode = 2
+
+[node name="Button2" parent="Shop/Stock" instance=ExtResource("4_t5kl4")]
+layout_mode = 2
+
+[node name="Button3" parent="Shop/Stock" instance=ExtResource("4_t5kl4")]
+layout_mode = 2
+
+[node name="PlayerCoinText" type="HBoxContainer" parent="Shop"]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 28.0
+offset_right = 1070.0
+offset_bottom = 68.0
+script = ExtResource("5_qh772")
+
+[node name="TextureRect" type="TextureRect" parent="Shop/PlayerCoinText"]
+layout_mode = 2
+texture = ExtResource("5_k530y")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Shop/PlayerCoinText"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "6"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 986.0

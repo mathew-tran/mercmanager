@@ -94,3 +94,10 @@ func GetEnemyResourceUnits():
 
 func GetBattleSystem() -> BattleSystem:
 	return get_tree().get_nodes_in_group("BattleSystem")[0]
+
+func GetShop() -> Shop:
+	return get_tree().get_nodes_in_group("Shop")[0]
+
+func GetPlayerTeam() -> PlayerTeam:
+	var result = get_tree().get_nodes_in_group("PlayerTeam")
+	return result[0]
