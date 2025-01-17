@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="2.8685467"
-     inkscape:cx="375.80006"
-     inkscape:cy="629.76141"
+     inkscape:zoom="1.0141844"
+     inkscape:cx="772.04895"
+     inkscape:cy="166.14336"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-7"
@@ -1057,7 +1057,10 @@
            x="114.73784"
            y="132.58366">65</tspan></text><g
          id="g62"
-         transform="translate(-14.942236,39.845962)"><circle
+         transform="translate(-14.942236,39.845962)"
+         inkscape:export-filename="Coin.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"><circle
            style="fill:#1b192a;fill-opacity:1;stroke:#1b192a;stroke-width:0.0439268;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
            id="circle61"
            cx="110.04839"
