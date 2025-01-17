@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var Characters = $Characters
+@onready var PlayerSpawns = $PlayerSpawnPositions
+@onready var EnemySpawns = $EnemySpawnPositions
 
 enum GAME_STATE {
 	PLAYING,
@@ -9,8 +11,30 @@ enum GAME_STATE {
 }
 
 var CurrentState = GAME_STATE.PLAYING
-func _ready():
-	PlayGame()
+
+func StartRound():
+	SpawnInTeam(Character.TEAM.PLAYER)
+	SpawnInTeam(Character.TEAM.ENEMY)
+	
+func SpawnInTeam(teamType):
+	var units = []
+	var spawnPositions = PlayerSpawns
+	
+	if teamType == Character.TEAM.PLAYER:
+		units = Helper.GetPlayerResourceUnits()
+	else:
+		units = Helper.GetEnemyResourceUnits()
+		spawnPositions = EnemySpawns
+		
+	for index in range(0, len(units)):
+		if is_instance_valid(units[index]):
+			var instance = load("res://Prefabs/Character.tscn")
+			instance.CharacterData = units[index]
+			instance.Team = teamType
+			instance.global_position = spawnPositions.get_child(index).GetSpawnPosition()
+			Characters.add_child(instance)
+			
+	
 	
 	
 func PlayGame():

@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://8fedrthhcdfm"]
+
+[ext_resource type="PackedScene" uid="uid://cttiymsodcvro" path="res://Prefabs/UI/TeamMemberSlot.tscn" id="1_ijruc"]
+[ext_resource type="Script" path="res://Scripts/Game/UI/TeamUI.gd" id="1_s632c"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="2_3hmp4"]
+[ext_resource type="Resource" uid="uid://63bfigroloi1" path="res://Scripts/Data/Units/Barbarian.tres" id="3_x5s0a"]
+
+[node name="Team" type="VBoxContainer"]
+offset_left = 130.0
+offset_top = 92.0
+offset_right = 477.0
+offset_bottom = 479.0
+script = ExtResource("1_s632c")
+Team = Array[ExtResource("2_3hmp4")]([ExtResource("3_x5s0a")])
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "TEAM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="TeamMemberSlot" parent="GridContainer" instance=ExtResource("1_ijruc")]
+layout_mode = 2
+
+[node name="TeamMemberSlot2" parent="GridContainer" instance=ExtResource("1_ijruc")]
+layout_mode = 2
+
+[node name="TeamMemberSlot3" parent="GridContainer" instance=ExtResource("1_ijruc")]
+layout_mode = 2
+
+[node name="TeamMemberSlot4" parent="GridContainer" instance=ExtResource("1_ijruc")]
+layout_mode = 2
+
+[node name="TeamMemberSlot5" parent="GridContainer" instance=ExtResource("1_ijruc")]
+layout_mode = 2
+
+[node name="TeamMemberSlot6" parent="GridContainer" instance=ExtResource("1_ijruc")]
+layout_mode = 2
+
+[node name="TeamMemberSlot7" parent="GridContainer" instance=ExtResource("1_ijruc")]
+layout_mode = 2
+
+[node name="TeamMemberSlot8" parent="GridContainer" instance=ExtResource("1_ijruc")]
+layout_mode = 2
+
+[node name="TeamMemberSlot9" parent="GridContainer" instance=ExtResource("1_ijruc")]
+layout_mode = 2

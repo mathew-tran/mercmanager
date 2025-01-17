@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://3l11qm3o02te"]
+
+[ext_resource type="PackedScene" uid="uid://8fedrthhcdfm" path="res://Prefabs/UI/TeamUI.tscn" id="1_0gone"]
+[ext_resource type="Script" path="res://Scripts/Game/UI/GameUI.gd" id="1_442ia"]
+[ext_resource type="Texture2D" uid="uid://wiqyhbyllo76" path="res://Art/UI/PlayButton.png" id="2_h8wha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnei0"]
+bg_color = Color(0.00453645, 0.00453645, 0.00453644, 1)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_442ia")
+
+[node name="Shop" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cnei0")
+
+[node name="Team" parent="Shop" groups=["PlayerTeam"] instance=ExtResource("1_0gone")]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 73.0
+offset_right = 486.0
+offset_bottom = 499.0
+
+[node name="Button" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 986.0
+offset_top = 469.0
+offset_right = 1097.0
+offset_bottom = 578.0
+icon = ExtResource("2_h8wha")
+icon_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Shop/Button"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -148.5
+offset_top = -6.0
+offset_right = 151.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "START ROUND"
+horizontal_alignment = 1
+vertical_alignment = 1

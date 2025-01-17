@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkq1pww4yp2qp"]
+
+[ext_resource type="Texture2D" uid="uid://dl2nckq33ucy4" path="res://Art/UI/Frame.png" id="1_8tf4v"]
+[ext_resource type="Script" path="res://Scripts/Game/SpawnPoint.gd" id="2_32lux"]
+
+[node name="SpawnPoint" type="Sprite2D"]
+texture = ExtResource("1_8tf4v")
+script = ExtResource("2_32lux")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.5
+offset_top = -67.0
+offset_right = 43.5
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SPAWN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PositionToSpawn" type="Node2D" parent="."]

@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ln4502atjtfy"]
+[gd_scene load_steps=6 format=3 uid="uid://ln4502atjtfy"]
 
 [ext_resource type="Script" path="res://Scripts/Game/BattleSystem.gd" id="1_fnyww"]
-[ext_resource type="PackedScene" uid="uid://dnvuj4natuhv0" path="res://Prefabs/Character.tscn" id="1_x8yeu"]
-[ext_resource type="Resource" uid="uid://c5pco1554jurt" path="res://Scripts/Data/Units/Archer.tres" id="2_y2y76"]
-[ext_resource type="Resource" uid="uid://63bfigroloi1" path="res://Scripts/Data/Units/Barbarian.tres" id="3_h4s07"]
-[ext_resource type="Resource" uid="uid://cbhisiuybw3ln" path="res://Scripts/Data/Enemies/Skeleton.tres" id="4_437b0"]
+[ext_resource type="PackedScene" uid="uid://bkq1pww4yp2qp" path="res://Prefabs/Game/SpawnPoint.tscn" id="2_ddgpf"]
+[ext_resource type="PackedScene" uid="uid://3l11qm3o02te" path="res://Prefabs/UI/GameUI.tscn" id="3_mmn1l"]
 [ext_resource type="Script" path="res://Scripts/Game/FollowCamera.gd" id="5_gxreo"]
+[ext_resource type="Script" path="res://Scripts/Game/EnemySpawner.gd" id="8_g0a7n"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(78, 100)
@@ -15,33 +14,74 @@ script = ExtResource("1_fnyww")
 
 [node name="Characters" type="Node2D" parent="BattleSystem"]
 
-[node name="Character7" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(27, -357)
-CharacterData = ExtResource("2_y2y76")
+[node name="PlayerSpawnPositions" type="Node2D" parent="BattleSystem"]
 
-[node name="Character8" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(26, -45)
-CharacterData = ExtResource("3_h4s07")
+[node name="SpawnPoint" parent="BattleSystem/PlayerSpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-246, 0)
 
-[node name="Character12" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(241, 317)
-CharacterData = ExtResource("3_h4s07")
+[node name="SpawnPoint2" parent="BattleSystem/PlayerSpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-104, 0)
 
-[node name="Character10" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(-171, -192)
-CharacterData = ExtResource("2_y2y76")
+[node name="SpawnPoint3" parent="BattleSystem/PlayerSpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(32, 0)
 
-[node name="Character9" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(631, -295)
-CharacterData = ExtResource("4_437b0")
-Team = 1
+[node name="SpawnPoint4" parent="BattleSystem/PlayerSpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-246, 123)
 
-[node name="Character11" parent="BattleSystem/Characters" instance=ExtResource("1_x8yeu")]
-position = Vector2(686, -120)
-CharacterData = ExtResource("4_437b0")
-Team = 1
+[node name="SpawnPoint5" parent="BattleSystem/PlayerSpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-104, 123)
+
+[node name="SpawnPoint6" parent="BattleSystem/PlayerSpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(32, 123)
+
+[node name="SpawnPoint7" parent="BattleSystem/PlayerSpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-237, 242)
+
+[node name="SpawnPoint8" parent="BattleSystem/PlayerSpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-106, 242)
+
+[node name="SpawnPoint9" parent="BattleSystem/PlayerSpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(31, 242)
+
+[node name="EnemySpawnPositions" type="Node2D" parent="BattleSystem"]
+
+[node name="SpawnPoint1" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-90, -216)
+
+[node name="SpawnPoint2" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-237, -227)
+
+[node name="SpawnPoint3" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(54, -227)
+
+[node name="SpawnPoint4" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-25, -359)
+
+[node name="SpawnPoint5" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-180, -359)
+
+[node name="SpawnPoint6" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(131, -359)
+
+[node name="SpawnPoint7" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-337, -359)
+
+[node name="SpawnPoint8" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-246, -497)
+
+[node name="SpawnPoint9" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(-90, -497)
+
+[node name="SpawnPoint10" parent="BattleSystem/EnemySpawnPositions" instance=ExtResource("2_ddgpf")]
+position = Vector2(54, -497)
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["FollowCamera"]]
 script = ExtResource("5_gxreo")
 
 [node name="Effects" type="Node" parent="." groups=["Effects"]]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_mmn1l")]
+visible = false
+
+[node name="EnemySpawner" type="Node2D" parent="." groups=["EnemySpawner"]]
+script = ExtResource("8_g0a7n")
