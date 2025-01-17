@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name BattleSystem
+
 @onready var Characters = $Characters
 @onready var PlayerSpawns = $PlayerSpawnPositions
 @onready var EnemySpawns = $EnemySpawnPositions
@@ -10,11 +12,19 @@ enum GAME_STATE {
 	PLAYER_LOSE
 }
 
+signal TellGameState(state : GAME_STATE)
 var CurrentState = GAME_STATE.PLAYING
 
 func StartRound():
-	SpawnInTeam(Character.TEAM.PLAYER)
-	SpawnInTeam(Character.TEAM.ENEMY)
+	await KillExistingCharacters()
+	await SpawnInTeam(Character.TEAM.PLAYER)
+	await SpawnInTeam(Character.TEAM.ENEMY)
+	PlayGame()
+	
+func KillExistingCharacters():
+	for character in Characters.get_children():
+		character.queue_free()
+	await get_tree().process_frame
 	
 func SpawnInTeam(teamType):
 	var units = []
@@ -28,13 +38,13 @@ func SpawnInTeam(teamType):
 		
 	for index in range(0, len(units)):
 		if is_instance_valid(units[index]):
-			var instance = load("res://Prefabs/Character.tscn")
+			var instance = load("res://Prefabs/Character.tscn").instantiate()
 			instance.CharacterData = units[index]
 			instance.Team = teamType
 			instance.global_position = spawnPositions.get_child(index).GetSpawnPosition()
 			Characters.add_child(instance)
 			
-	
+	await get_tree().process_frame
 	
 	
 func PlayGame():
@@ -62,9 +72,10 @@ func PlayGame():
 			if index >= len(Characters.get_children()):
 				index = 0
 		
-		
-				
 		await get_tree().create_timer(.5).timeout
+	
+	TellGameState.emit(CurrentState)
+	
 		
 	
 func IsUnitAlive(index):

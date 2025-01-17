@@ -91,3 +91,6 @@ func GetPlayerResourceUnits():
 func GetEnemyResourceUnits():
 	var result = get_tree().get_nodes_in_group("EnemySpawner")
 	return result[0].GetUnits()
+
+func GetBattleSystem() -> BattleSystem:
+	return get_tree().get_nodes_in_group("BattleSystem")[0]

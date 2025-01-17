@@ -9,7 +9,7 @@
 [node name="Node2D" type="Node2D"]
 position = Vector2(78, 100)
 
-[node name="BattleSystem" type="Node2D" parent="."]
+[node name="BattleSystem" type="Node2D" parent="." groups=["BattleSystem"]]
 script = ExtResource("1_fnyww")
 
 [node name="Characters" type="Node2D" parent="BattleSystem"]
