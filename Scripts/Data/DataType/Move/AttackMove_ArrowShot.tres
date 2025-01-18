@@ -13,7 +13,8 @@ SpawnType = 0
 [resource]
 script = ExtResource("1_pj41w")
 BaseDamage = 1
-HitAmount = 3
+DamageRange = 5
+HitAmount = 1
 Name = "Arrow Shot"
 PercentChance = 60
 MoveDescription = "Shoots an arrow from a distance"

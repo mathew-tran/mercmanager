@@ -22,5 +22,8 @@ func HasMoveSucceeded():
 	var result = randf_range(0, 100)
 	return result <= PercentChance
 	
+func GetDamageValueText():
+	return ""
+	
 func Execute(owner : Character, targets : Array[Character]):
 	pass

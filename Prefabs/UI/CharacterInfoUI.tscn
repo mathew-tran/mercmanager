@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://jyov1mr68amj"]
+
+[ext_resource type="Script" path="res://Scripts/Game/UI/CharacterInfoUI.gd" id="1_fb0ub"]
+[ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Barbarian.png" id="1_rhwta"]
+[ext_resource type="PackedScene" uid="uid://cevg3png80cwf" path="res://Prefabs/UI/MoveInfoButton.tscn" id="3_b3kjb"]
+
+[node name="CharacterStat" type="Panel" groups=["CharacterInfoUI"]]
+custom_minimum_size = Vector2(300, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -719.0
+offset_bottom = -427.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+mouse_filter = 2
+script = ExtResource("1_fb0ub")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -14.0
+offset_right = 120.0
+offset_bottom = 151.0
+metadata/_edit_group_ = true
+
+[node name="Face" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_rhwta")
+stretch_mode = 4
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Barbarian Assassin"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 148.0
+offset_top = 14.0
+offset_right = 431.0
+offset_bottom = 218.0
+metadata/_edit_group_ = true
+
+[node name="MoveInfoButton" parent="GridContainer" instance=ExtResource("3_b3kjb")]
+layout_mode = 2
+
+[node name="MoveInfoButton2" parent="GridContainer" instance=ExtResource("3_b3kjb")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 154.0
+offset_right = 156.0
+offset_bottom = 255.0
+theme_override_constants/h_separation = 9
+columns = 2
+metadata/_edit_group_ = true
+
+[node name="HPLabel" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "HP:"
+
+[node name="HPValue" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "10"
+
+[node name="DamageLabel" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "DMG:"
+
+[node name="DamageValue" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "+0"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 234.0
+offset_right = 160.0
+offset_bottom = 281.0
+text = "Retaliates when hit"
+autowrap_mode = 2

@@ -112,3 +112,6 @@ offset_top = -180.0
 offset_right = 20.0
 offset_bottom = -124.0
 texture = ExtResource("8_w3083")
+
+[connection signal="mouse_entered" from="CharacterUI" to="." method="_on_character_ui_mouse_entered"]
+[connection signal="mouse_exited" from="CharacterUI" to="." method="_on_character_ui_mouse_exited"]

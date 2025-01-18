@@ -55,3 +55,16 @@ func RunInput():
 	await Speak("")
 	$ActiveSymbol.visible = false
 	show_behind_parent = true
+
+
+func _on_character_ui_mouse_entered():
+	if is_instance_valid(Helper.GetCharInfoUI()):
+		if is_instance_valid(CharacterData):
+			Helper.GetCharInfoUI().UpdateInfo(CharacterData)
+		else:
+			Helper.GetCharInfoUI().HideInfo()
+
+
+func _on_character_ui_mouse_exited():
+	if is_instance_valid(Helper.GetCharInfoUI()):
+		Helper.GetCharInfoUI().HideInfo()

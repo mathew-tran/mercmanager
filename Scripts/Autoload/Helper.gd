@@ -101,3 +101,9 @@ func GetShop() -> Shop:
 func GetPlayerTeam() -> PlayerTeam:
 	var result = get_tree().get_nodes_in_group("PlayerTeam")
 	return result[0]
+
+func GetCharInfoUI() -> CharacterInfoUI:
+	var result = get_tree().get_nodes_in_group("CharacterInfoUI")
+	if result:
+		return result[0]
+	return null

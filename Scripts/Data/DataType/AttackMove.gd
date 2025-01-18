@@ -3,6 +3,7 @@ extends Move
 class_name AttackMove
 
 @export var BaseDamage = 1
+@export var DamageRange = 0
 @export var HitAmount = 1
 
 func Execute(owner : Character, targets : Array[Character]):
@@ -25,5 +26,9 @@ func Execute(owner : Character, targets : Array[Character]):
 
 func CalculateDamage(owner: Character):
 	var damage = BaseDamage	
-	damage += + randi_range(0, 1 + owner.CharacterData.StatValues.Damage)
+	damage += randi_range(0, DamageRange)
+	damage += owner.CharacterData.StatValues.Damage
 	return damage
+
+func GetDamageValueText():
+	return str(BaseDamage) + " - " + str(BaseDamage + DamageRange)

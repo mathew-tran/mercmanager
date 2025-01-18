@@ -15,10 +15,7 @@ Move2 = ExtResource("3_ejfi4")
 [sub_resource type="Resource" id="Resource_m4fto"]
 script = ExtResource("3_hhsmd")
 HP = 50
-Damage = 1
-Defense = 1
-Speed = 1
-Crit = 0
+Damage = 2
 
 [resource]
 script = ExtResource("1_57nl1")
@@ -26,3 +23,4 @@ Name = "Sword Skeleton"
 Face = ExtResource("1_gn4vj")
 StatValues = SubResource("Resource_m4fto")
 Moves = SubResource("Resource_007vb")
+Cost = 1

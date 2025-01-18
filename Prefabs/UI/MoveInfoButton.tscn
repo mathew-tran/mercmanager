@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=3 uid="uid://cevg3png80cwf"]
+
+[ext_resource type="Script" path="res://Prefabs/UI/MoveInfoUI.gd" id="1_y1id8"]
+[ext_resource type="Texture2D" uid="uid://b0nijh363cfry" path="res://Art/Projectiles/Slash.png" id="2_jlvj4"]
+[ext_resource type="Texture2D" uid="uid://2k1h3yuptsl6" path="res://Art/UI/Strikeout.png" id="3_lt7x3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drmol"]
+bg_color = Color(0.078815, 0.078815, 0.0788149, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="MoveInfoButton" type="Panel"]
+custom_minimum_size = Vector2(150, 100)
+offset_right = 150.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_drmol")
+script = ExtResource("1_y1id8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = -62.0
+offset_top = 12.0
+offset_right = 6.0
+offset_bottom = 28.0
+
+[node name="MoveTexture" type="TextureRect" parent="Control"]
+layout_mode = 2
+offset_left = 63.0
+offset_top = -23.0
+offset_right = 175.0
+offset_bottom = 89.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jlvj4")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -37.0
+offset_right = 79.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Empty" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "ARROW SHOT"
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Damage"
+
+[node name="DamageValue" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "2 - 3"
+
+[node name="Accuracy" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Accuracy"
+
+[node name="AccuracyValue" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "70%"
+
+[node name="Description" type="Label" parent="."]
+custom_minimum_size = Vector2(147, 27)
+layout_mode = 2
+offset_left = 6.0
+offset_top = 73.0
+offset_right = 153.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 8
+text = "Hits from afar"
+autowrap_mode = 2
+
+[node name="Strikeout" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -23.5
+offset_right = 71.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lt7x3")
+stretch_mode = 5

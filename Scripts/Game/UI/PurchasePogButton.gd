@@ -33,3 +33,12 @@ func _on_button_up():
 	$VBoxContainer/Label.text = "SOLD OUT"
 	modulate = Color.DIM_GRAY
 	disabled = true
+
+
+func _on_mouse_entered():
+	if is_instance_valid(Data):
+		Helper.GetCharInfoUI().UpdateInfo(Data)
+
+
+func _on_mouse_exited():
+	Helper.GetCharInfoUI().HideInfo()

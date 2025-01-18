@@ -13,10 +13,7 @@ Move1 = ExtResource("2_7xcmp")
 [sub_resource type="Resource" id="Resource_l7xi7"]
 script = ExtResource("2_8n3i5")
 HP = 12
-Damage = 1
-Defense = 1
-Speed = 100
-Crit = 4
+Damage = 0
 
 [resource]
 script = ExtResource("5_auhku")
@@ -24,3 +21,4 @@ Name = "Archer"
 Face = ExtResource("1_lcfoq")
 StatValues = SubResource("Resource_l7xi7")
 Moves = SubResource("Resource_kaip4")
+Cost = 1

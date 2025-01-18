@@ -14,9 +14,6 @@ Move1 = ExtResource("2_dgm4l")
 script = ExtResource("2_fikl4")
 HP = 10
 Damage = 1
-Defense = 0
-Speed = 3
-Crit = 1
 
 [resource]
 script = ExtResource("1_f3kih")
@@ -24,3 +21,4 @@ Name = "Barbarian"
 Face = ExtResource("1_jcwu6")
 StatValues = SubResource("Resource_xmchx")
 Moves = SubResource("Resource_7yqou")
+Cost = 1

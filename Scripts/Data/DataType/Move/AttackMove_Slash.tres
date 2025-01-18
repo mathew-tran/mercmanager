@@ -12,7 +12,8 @@ SpawnType = 1
 
 [resource]
 script = ExtResource("3_c2a0y")
-BaseDamage = 3
+BaseDamage = 5
+DamageRange = 3
 HitAmount = 2
 Name = "Slash"
 PercentChance = 90

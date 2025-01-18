@@ -13,6 +13,7 @@ SpawnType = 1
 [resource]
 script = ExtResource("1_oft7b")
 BaseDamage = 2
+DamageRange = 2
 HitAmount = 2
 Name = "Punch"
 PercentChance = 80

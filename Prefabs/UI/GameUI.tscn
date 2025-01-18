@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://3l11qm3o02te"]
+[gd_scene load_steps=10 format=3 uid="uid://3l11qm3o02te"]
 
 [ext_resource type="PackedScene" uid="uid://8fedrthhcdfm" path="res://Prefabs/UI/TeamUI.tscn" id="1_0gone"]
 [ext_resource type="Script" path="res://Scripts/Game/UI/GameUI.gd" id="1_442ia"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qu1ysjysh7mu" path="res://Prefabs/UI/PurchasePogButton.tscn" id="4_t5kl4"]
 [ext_resource type="Texture2D" uid="uid://e2c4066hnaa5" path="res://Art/Coin.png" id="5_k530y"]
 [ext_resource type="Script" path="res://Scripts/Game/UI/PlayerCoinText.gd" id="5_qh772"]
+[ext_resource type="PackedScene" uid="uid://jyov1mr68amj" path="res://Prefabs/UI/CharacterInfoUI.tscn" id="8_kih8a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnei0"]
 bg_color = Color(0.00453645, 0.00453645, 0.00453644, 1)
@@ -92,5 +93,12 @@ theme_override_font_sizes/font_size = 30
 text = "START ROUND"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="CharacterStat" parent="CanvasLayer" instance=ExtResource("8_kih8a")]
+offset_left = -1.0
+offset_right = -853.0
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
