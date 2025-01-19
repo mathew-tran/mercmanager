@@ -10,11 +10,9 @@ func _process(delta):
 		var windowSize = Vector2(get_viewport().get_visible_rect().size) 
 		var scaledSize = size.x * scale
 		var newPosition = get_global_mouse_position() + Vector2(16, 16)
-		print(str(newPosition) + "--> proposed")
 		if newPosition.x > windowSize.x - scaledSize.x:
 			newPosition.x = windowSize.x - scaledSize.x
 		global_position = newPosition
-		print(global_position)
 			
 func UpdateInfo(charInfo : CharacterInfo):
 	$VBoxContainer/Face.texture = charInfo.Face
