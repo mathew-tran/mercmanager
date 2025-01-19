@@ -23,7 +23,10 @@ func Setup():
 	$AIController.CharRef = self
 	$HPComponent.TakenDamage.connect(OnTakenDamage)
 	show_behind_parent = true
-
+	
+	
+func GetAI() -> AIController:
+	return $AIController
 			
 func OnTakenDamage():
 	var tween = get_tree().create_tween()
@@ -51,6 +54,7 @@ func RunInput():
 	await get_tree().create_timer(.4).timeout
 	$AIController.Run()
 	await $AIController.ActionComplete
+	await $AIController.RunTrait(Trait.EXECUTION_TIME.AFTER_ATTACK)
 	
 	$AIController.bIsRunning = false
 	Speak("")

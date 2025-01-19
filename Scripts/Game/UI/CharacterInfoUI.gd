@@ -26,6 +26,13 @@ func UpdateInfo(charInfo : CharacterInfo):
 	$VBoxContainer2/DamageValue.text = str(charInfo.StatValues.Damage)
 	$GridContainer/MoveInfoButton.Setup(charInfo.Moves.Move1)
 	$GridContainer/MoveInfoButton2.Setup(charInfo.Moves.Move2)
+	for child in $TraitsPanel.get_children():
+		child.queue_free()
+	
+	for charTrait in charInfo.Traits:
+		var instance = load("res://Prefabs/UI/TraitText.tscn").instantiate()
+		instance.Setup(charTrait.GetTraitText())
+		$TraitsPanel.add_child(instance)
 	visible = true
 	
 func HideInfo():

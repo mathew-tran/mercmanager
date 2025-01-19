@@ -9,6 +9,8 @@ class_name CharacterInfo
 @export var Moves : MoveList
 @export var Cost = 1
 
+@export var Traits : Array[Trait]
+
 var ActivationRange = 400
 
 var GivenName = ""

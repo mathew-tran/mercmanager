@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TraitRunAway" load_steps=2 format=3 uid="uid://dgyq31ews7rlx"]
+
+[ext_resource type="Script" path="res://Scripts/Data/Trait/Trait_Runaway.gd" id="1_wkmhd"]
+
+[resource]
+script = ExtResource("1_wkmhd")
+Name = "Run Away"
+Description = "runs away after attacking."

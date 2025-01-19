@@ -62,7 +62,14 @@ func RunAttackAI(delta):
 	else:
 		ActionComplete.emit()
 
-
+func SetAIState(aiState : AI_STATE):
+	CurrentState = aiState
+	bIsRunning = true
+	
+func RunTrait(traitType : Trait.EXECUTION_TIME):
+	for charTrait in CharRef.CharacterData.Traits:
+		if charTrait.ExecutionType == traitType:
+			await charTrait.Execute(CharRef)
 	
 func RunAwayAI(delta):
 	var nearestEnemy = Helper.GetClosestEnemy(CharRef)
