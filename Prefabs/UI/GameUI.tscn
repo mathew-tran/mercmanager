@@ -98,7 +98,5 @@ vertical_alignment = 1
 layer = 2
 
 [node name="CharacterStat" parent="CanvasLayer" instance=ExtResource("8_kih8a")]
-offset_left = -1.0
-offset_right = -853.0
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

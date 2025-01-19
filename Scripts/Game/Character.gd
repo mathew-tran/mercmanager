@@ -13,7 +13,8 @@ enum TEAM {
 
 signal CompletedTakingDamage
 
-func _ready():
+	
+func _ready():	
 	Setup()
 	
 func Setup():

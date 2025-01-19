@@ -22,3 +22,4 @@ Face = ExtResource("1_lcfoq")
 StatValues = SubResource("Resource_l7xi7")
 Moves = SubResource("Resource_kaip4")
 Cost = 1
+GivenNames = "Rylan, Kaela, Daryn, Liora, Zane, Alina, Kieran, Mira, Ashen, Taryn, Silas, Lyric, Rowan, Evryn, Calla, Jace, Arlen, Renna, Quinn, Kyra"

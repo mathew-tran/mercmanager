@@ -6,7 +6,7 @@ func Setup(character : CharacterInfo):
 	if is_instance_valid(character):
 		CharInfoRef = character
 		$Face.texture = CharInfoRef.Face
-		$Label.text = CharInfoRef.Name
+		$Label.text = CharInfoRef.GetFullName()
 		$TextureRect.modulate = Color.DIM_GRAY
 	else:
 		CharInfoRef = null

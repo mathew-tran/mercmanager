@@ -14,8 +14,10 @@ func OnUpdateMoney():
 	
 func Setup(charInfo : CharacterInfo):
 	Data = charInfo
+	Data = Data.duplicate(true)
+	Data.Setup()
 	$VBoxContainer/Frame/Face.texture = Data.Face
-	$VBoxContainer/Label.text = Data.Name
+	$VBoxContainer/Label.text = Data.GetFullName()
 	$VBoxContainer/HBoxContainer/Label.text = str(Data.Cost)
 	UpdateAffordability()
 

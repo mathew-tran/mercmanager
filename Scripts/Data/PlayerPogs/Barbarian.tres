@@ -12,7 +12,7 @@ Move1 = ExtResource("2_dgm4l")
 
 [sub_resource type="Resource" id="Resource_xmchx"]
 script = ExtResource("2_fikl4")
-HP = 10
+HP = 12
 Damage = 1
 
 [resource]
@@ -21,4 +21,5 @@ Name = "Barbarian"
 Face = ExtResource("1_jcwu6")
 StatValues = SubResource("Resource_xmchx")
 Moves = SubResource("Resource_7yqou")
-Cost = 1
+Cost = 2
+GivenNames = "Thorne, Kaida, Ragnar, Brannok, Valkra, Drevyn, Svara, Kordak, Brynja, Varek, Dagna, Garrik, Sigrun, Kaelgor, Haldra, Torric, Freya, Darok, Oryn, Zarka"

@@ -5,7 +5,7 @@ var CharacterRef : Character
 func Setup(char : Character):
 	CharacterRef = char
 	$Face.texture = char.CharacterData.Face
-	$ActiveUI/Name.text = char.CharacterData.Name
+	$ActiveUI/Name.text = char.CharacterData.GetFullName()
 	char.GetHealthComponent().Setup(char)
 	char.GetHealthComponent().Update.connect(OnUpdate)
 	char.GetHealthComponent().OnDeath.connect(OnDeath)

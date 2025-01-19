@@ -24,3 +24,4 @@ Face = ExtResource("1_gn4vj")
 StatValues = SubResource("Resource_m4fto")
 Moves = SubResource("Resource_007vb")
 Cost = 1
+GivenNames = "Graveblade, Morven, Cindral, Duskmarrow, Valthorn, Shadryk, Kharak, Nytheris, Sephtor, Drynoss, Marrowveil, Zalkrin, Ossivar, Rathul, Calvaris, Blightfang, Serrak, Venmor, Skelder, Arkanis"
