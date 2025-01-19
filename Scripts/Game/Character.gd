@@ -24,6 +24,10 @@ func Setup():
 	$HPComponent.TakenDamage.connect(OnTakenDamage)
 	show_behind_parent = true
 	
+	CharacterData.Traits = CharacterData.Traits.duplicate(true)
+	for charTrait in CharacterData.Traits:
+		charTrait.Setup()
+	
 	
 func GetAI() -> AIController:
 	return $AIController

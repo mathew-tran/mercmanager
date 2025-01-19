@@ -41,6 +41,8 @@ func GetClosestEnemy(charRef: Character, bIsAlive = true) -> Character:
 		if enemy.GetHealthComponent().IsAlive() == bIsAlive:
 			closestEnemy = enemy
 			break
+	if closestEnemy == null:
+		return null
 	var closestDistance = charRef.global_position.distance_to(closestEnemy.global_position)
 	for enemy in enemyUnits:
 		if enemy.GetHealthComponent().IsAlive() == bIsAlive:

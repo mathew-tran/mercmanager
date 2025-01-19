@@ -8,9 +8,11 @@ var MaxHealth = 0
 signal Update
 signal TakenDamage
 signal OnDeath
+var CharRef : Character
 func Setup(char : Character):
 	Health = char.CharacterData.StatValues.HP
 	MaxHealth = Health
+	CharRef = char
 	Update.emit()
 	
 func GetHealthString():
@@ -28,6 +30,8 @@ func TakeDamage(amount):
 	Helper.CreateText(amount, get_parent().global_position)
 	if IsAlive() == false:
 		OnDeath.emit()
+	
+	print(CharRef.CharacterData.GetFullName() + " takes " + str(amount) + " damage")
 
 func IsAlive():
 	return Health > 0

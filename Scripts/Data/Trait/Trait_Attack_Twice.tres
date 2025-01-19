@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TraitExtraAttack" load_steps=2 format=3 uid="uid://dtn5e6ftdgidw"]
+
+[ext_resource type="Script" path="res://Scripts/Data/Trait/Trait_ExtraAttack.gd" id="1_hjbqd"]
+
+[resource]
+script = ExtResource("1_hjbqd")
+ExecutionTiming = 0
+Name = "Hasty"
+Description = "Attacks twice"

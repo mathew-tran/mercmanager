@@ -65,10 +65,15 @@ func RunAttackAI(delta):
 func SetAIState(aiState : AI_STATE):
 	CurrentState = aiState
 	bIsRunning = true
+	if CurrentState == AI_STATE.ATTACK:
+		MoveToUse = CharRef.CharacterData.Moves.DecideRandomMove()
 	
 func RunTrait(traitType : Trait.EXECUTION_TIME):
 	for charTrait in CharRef.CharacterData.Traits:
 		if charTrait.ExecutionType == traitType:
+			CharRef.Speak("!!!")
+			await get_tree().create_timer(1.2).timeout
+			print(CharRef.CharacterData.GetFullName() +  " runs trait " + charTrait.GetTraitText())
 			await charTrait.Execute(CharRef)
 	
 func RunAwayAI(delta):

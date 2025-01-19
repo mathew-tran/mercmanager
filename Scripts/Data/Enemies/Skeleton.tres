@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="CharacterInfo" load_steps=9 format=3 uid="uid://cbhisiuybw3ln"]
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=10 format=3 uid="uid://cbhisiuybw3ln"]
 
 [ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="1_57nl1"]
 [ext_resource type="Texture2D" uid="uid://wgt50gdfky0i" path="res://Art/Enemies/Skeleton.png" id="1_gn4vj"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="2_3er53"]
-[ext_resource type="Resource" uid="uid://n4wrttcj1v2m" path="res://Scripts/Data/DataType/Move/AttackMove_Punch.tres" id="2_dvipk"]
 [ext_resource type="Resource" uid="uid://c4h2yf4klqfqr" path="res://Scripts/Data/DataType/Move/AttackMove_Slash.tres" id="3_ejfi4"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="3_hhsmd"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Trait.gd" id="6_hp4ah"]
+[ext_resource type="Resource" uid="uid://cmhu8fj1bisrw" path="res://Scripts/Data/Trait/Trait_Retaliate.tres" id="7_1nt6p"]
 
 [sub_resource type="Resource" id="Resource_007vb"]
 script = ExtResource("2_3er53")
-Move1 = ExtResource("2_dvipk")
 Move2 = ExtResource("3_ejfi4")
 
 [sub_resource type="Resource" id="Resource_m4fto"]
@@ -24,4 +24,5 @@ Face = ExtResource("1_gn4vj")
 StatValues = SubResource("Resource_m4fto")
 Moves = SubResource("Resource_007vb")
 Cost = 1
+Traits = Array[ExtResource("6_hp4ah")]([ExtResource("7_1nt6p")])
 GivenNames = "Graveblade, Morven, Cindral, Duskmarrow, Valthorn, Shadryk, Kharak, Nytheris, Sephtor, Drynoss, Marrowveil, Zalkrin, Ossivar, Rathul, Calvaris, Blightfang, Serrak, Venmor, Skelder, Arkanis"

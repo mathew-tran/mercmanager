@@ -19,8 +19,11 @@ func Execute(owner : Character, targets : Array[Character]):
 						await Effect.PlayEffect(owner, target)
 					target.GetHealthComponent().TakeDamage(CalculateDamage(owner))
 					await target.get_tree().create_timer(.2).timeout
+					
 				else:
 					await target.get_tree().create_timer(.2).timeout
+				
+				await target.GetAI().RunTrait(Trait.EXECUTION_TIME.AFTER_HIT)
 	else:
 		await owner.Speak("MISSED")
 		await owner.get_tree().create_timer(.4).timeout

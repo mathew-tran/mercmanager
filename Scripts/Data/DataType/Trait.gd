@@ -6,7 +6,8 @@ class_name Trait
 @export var Description = ""
 
 enum EXECUTION_TIME {
-	AFTER_ATTACK
+	AFTER_ATTACK,
+	AFTER_HIT
 }
 
 var ExecutionType : EXECUTION_TIME
