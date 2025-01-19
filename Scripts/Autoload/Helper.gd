@@ -107,3 +107,9 @@ func GetCharInfoUI() -> CharacterInfoUI:
 	if result:
 		return result[0]
 	return null
+
+func GetFocusPoint():
+	var result = get_tree().get_nodes_in_group("FocusPoint")
+	if result:
+		return result[0]
+	return null

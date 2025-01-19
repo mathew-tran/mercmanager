@@ -85,3 +85,5 @@ visible = false
 
 [node name="EnemySpawner" type="Node2D" parent="." groups=["EnemySpawner"]]
 script = ExtResource("8_g0a7n")
+
+[node name="FocusPoint" type="Node2D" parent="." groups=["FocusPoint"]]

@@ -40,7 +40,8 @@ func GetHealthComponent() -> HealthComponent:
 	
 func RunInput():
 	$ActiveSymbol.visible = true
-	show_behind_parent = false
+	ShowUI(true)
+	show_behind_parent = true
 	print(name + "(" + CharacterData.Name + " is running)")
 	await get_tree().create_timer(.1).timeout
 	$AIController.Decide()
@@ -54,9 +55,16 @@ func RunInput():
 	await get_tree().create_timer(.1).timeout
 	await Speak("")
 	$ActiveSymbol.visible = false
-	show_behind_parent = true
+	show_behind_parent = false
+	ShowUI(false)
 
-
+func ShowUI(bShow):
+	if bShow == false:
+		$HideUITimer.start()
+	else:
+		$HideUITimer.stop()
+		$CharacterUI.SetActive(true)
+	
 func _on_character_ui_mouse_entered():
 	if is_instance_valid(Helper.GetCharInfoUI()):
 		if is_instance_valid(CharacterData):
@@ -68,3 +76,7 @@ func _on_character_ui_mouse_entered():
 func _on_character_ui_mouse_exited():
 	if is_instance_valid(Helper.GetCharInfoUI()):
 		Helper.GetCharInfoUI().HideInfo()
+
+
+func _on_timer_timeout():
+	$CharacterUI.SetActive(false)

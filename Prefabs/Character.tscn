@@ -39,7 +39,17 @@ offset_bottom = 19.0
 pivot_offset = Vector2(56, 56)
 texture = ExtResource("1_oxqv2")
 
-[node name="Frame" type="TextureRect" parent="CharacterUI"]
+[node name="ActiveUI" type="Control" parent="CharacterUI"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="TextureRect" parent="CharacterUI/ActiveUI"]
 layout_mode = 0
 offset_left = -9.0
 offset_top = -93.0
@@ -47,11 +57,18 @@ offset_right = 104.0
 offset_bottom = 18.0
 texture = ExtResource("3_ncfsr")
 
-[node name="Name" type="Label" parent="CharacterUI"]
+[node name="Name" type="Label" parent="CharacterUI/ActiveUI"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_lau12")
@@ -59,20 +76,25 @@ text = "NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HP" type="ProgressBar" parent="CharacterUI"]
+[node name="HP" type="ProgressBar" parent="CharacterUI/ActiveUI"]
+custom_minimum_size = Vector2(100, 10)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 25.0
-offset_bottom = 6.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 12.0
+offset_right = 50.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_8fv1a")
 theme_override_styles/fill = SubResource("StyleBoxFlat_36x6n")
 show_percentage = false
 
-[node name="Label" type="Label" parent="CharacterUI/HP"]
+[node name="Label" type="Label" parent="CharacterUI/ActiveUI/HP"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,6 +108,8 @@ vertical_alignment = 1
 
 [node name="SpeechBubble" parent="CharacterUI" instance=ExtResource("5_755dl")]
 visible = false
+z_index = 4
+z_as_relative = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -113,5 +137,10 @@ offset_right = 20.0
 offset_bottom = -124.0
 texture = ExtResource("8_w3083")
 
+[node name="HideUITimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="mouse_entered" from="CharacterUI" to="." method="_on_character_ui_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterUI" to="." method="_on_character_ui_mouse_exited"]
+[connection signal="timeout" from="HideUITimer" to="." method="_on_timer_timeout"]

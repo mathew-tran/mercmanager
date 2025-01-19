@@ -51,12 +51,14 @@ func _process(delta):
 func RunAttackAI(delta):
 	var nearestEnemy = Helper.GetClosestEnemy(CharRef)
 	if is_instance_valid(nearestEnemy):
+		nearestEnemy.ShowUI(true)
 		if IsCloseToPosition(CharRef, nearestEnemy.global_position) == false:
 			MoveToPosition(CharRef, nearestEnemy.global_position, delta)
 		else:
 			bIsRunning = false
 			await MoveToUse.AttemptToDoMove(CharRef, [nearestEnemy])
 			ActionComplete.emit()
+			nearestEnemy.ShowUI(false)
 	else:
 		ActionComplete.emit()
 
