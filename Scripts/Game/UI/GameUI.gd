@@ -9,6 +9,7 @@ func OnTellGameState(state : BattleSystem.GAME_STATE):
 	if state == BattleSystem.GAME_STATE.PLAYER_WIN:
 		visible = true
 		$Shop.PopulateStock()
+		Helper.GetCharInfoUI().HideInfo()
 	else:
 		print("Game Over!")
 		get_tree().reload_current_scene()

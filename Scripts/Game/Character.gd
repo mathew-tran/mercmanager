@@ -13,7 +13,8 @@ enum TEAM {
 
 signal CompletedTakingDamage
 
-	
+var bHovered = false
+
 func _ready():	
 	Setup()
 	
@@ -23,7 +24,7 @@ func Setup():
 	$HPComponent.TakenDamage.connect(OnTakenDamage)
 	show_behind_parent = true
 
-
+			
 func OnTakenDamage():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2.ONE * .4, .1)
@@ -66,17 +67,7 @@ func ShowUI(bShow):
 		$HideUITimer.stop()
 		$CharacterUI.SetActive(true)
 	
-func _on_character_ui_mouse_entered():
-	if is_instance_valid(Helper.GetCharInfoUI()):
-		if is_instance_valid(CharacterData):
-			Helper.GetCharInfoUI().UpdateInfo(CharacterData)
-		else:
-			Helper.GetCharInfoUI().HideInfo()
-
-
-func _on_character_ui_mouse_exited():
-	if is_instance_valid(Helper.GetCharInfoUI()):
-		Helper.GetCharInfoUI().HideInfo()
+		
 
 
 func _on_timer_timeout():

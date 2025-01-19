@@ -20,10 +20,10 @@ func Setup():
 	newNames.shuffle()
 	GivenName = newNames[0]
 	
-	StatValues.HP += randi_range(1, 3)
+	StatValues.HP += randi_range(1, 5)
 	if randi_range(0, 100) > 70:
-		StatValues.Damage += randi_range(1, 2)
-		StatValues.HP += randi_range(1, 3)
+		StatValues.Damage += randi_range(1, 3)
+		StatValues.HP += randi_range(1, 4)
 
 func GetFullName():
 	if GivenName == "":

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ln4502atjtfy"]
+[gd_scene load_steps=7 format=3 uid="uid://ln4502atjtfy"]
 
 [ext_resource type="Script" path="res://Scripts/Game/BattleSystem.gd" id="1_fnyww"]
 [ext_resource type="PackedScene" uid="uid://bkq1pww4yp2qp" path="res://Prefabs/Game/SpawnPoint.tscn" id="2_ddgpf"]
 [ext_resource type="PackedScene" uid="uid://3l11qm3o02te" path="res://Prefabs/UI/GameUI.tscn" id="3_mmn1l"]
 [ext_resource type="Script" path="res://Scripts/Game/FollowCamera.gd" id="5_gxreo"]
+[ext_resource type="PackedScene" uid="uid://cpdnf7b0of0ad" path="res://Prefabs/CustomMouse.tscn" id="6_ojwx8"]
 [ext_resource type="Script" path="res://Scripts/Game/EnemySpawner.gd" id="8_g0a7n"]
 
 [node name="Node2D" type="Node2D"]
@@ -87,3 +88,5 @@ visible = false
 script = ExtResource("8_g0a7n")
 
 [node name="FocusPoint" type="Node2D" parent="." groups=["FocusPoint"]]
+
+[node name="CustomMouse" parent="." instance=ExtResource("6_ojwx8")]

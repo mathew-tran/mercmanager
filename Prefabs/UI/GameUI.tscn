@@ -26,17 +26,19 @@ script = ExtResource("2_takq8")
 
 [node name="Team" parent="Shop" groups=["PlayerTeam"] instance=ExtResource("1_0gone")]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 73.0
-offset_right = 486.0
-offset_bottom = 499.0
+offset_left = 263.0
+offset_top = 213.0
+offset_right = 643.0
+offset_bottom = 639.0
+metadata/_edit_group_ = true
 
 [node name="Stock" type="HBoxContainer" parent="Shop"]
 layout_mode = 0
-offset_left = 670.0
-offset_top = 116.0
-offset_right = 1068.0
-offset_bottom = 306.0
+offset_left = 1047.0
+offset_top = 226.0
+offset_right = 1445.0
+offset_bottom = 451.0
+metadata/_edit_group_ = true
 
 [node name="Button" parent="Shop/Stock" instance=ExtResource("4_t5kl4")]
 layout_mode = 2
@@ -48,12 +50,17 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PlayerCoinText" type="HBoxContainer" parent="Shop"]
-layout_mode = 0
-offset_left = 1016.0
-offset_top = 28.0
-offset_right = 1070.0
-offset_bottom = 68.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -175.0
+offset_top = 55.0
+offset_right = -93.0
+offset_bottom = 110.0
+grow_horizontal = 0
 script = ExtResource("5_qh772")
+metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Shop/PlayerCoinText"]
 layout_mode = 2
@@ -67,10 +74,10 @@ theme_override_font_sizes/font_size = 40
 text = "6"
 
 [node name="Button" type="Button" parent="."]
-offset_left = 986.0
-offset_top = 469.0
-offset_right = 1097.0
-offset_bottom = 578.0
+offset_left = 1700.0
+offset_top = 870.0
+offset_right = 1811.0
+offset_bottom = 979.0
 icon = ExtResource("2_h8wha")
 icon_alignment = 1
 metadata/_edit_group_ = true

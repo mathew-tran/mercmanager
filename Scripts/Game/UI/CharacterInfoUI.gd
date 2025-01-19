@@ -5,6 +5,11 @@ class_name CharacterInfoUI
 func _ready():
 	HideInfo()
 	
+func _input(event):
+	if visible:
+		if event.is_action_pressed("right_click"):
+			HideInfo()
+		
 func _process(delta):
 	if visible:
 		var windowSize = Vector2(get_viewport().get_visible_rect().size) 

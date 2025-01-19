@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnvuj4natuhv0"]
+[gd_scene load_steps=13 format=3 uid="uid://dnvuj4natuhv0"]
 
 [ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Barbarian.png" id="1_oxqv2"]
 [ext_resource type="Script" path="res://Scripts/Game/Character.gd" id="1_vsemf"]
@@ -17,6 +17,9 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36x6n"]
 bg_color = Color(0.207843, 0.796078, 0.784314, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yt7r0"]
+radius = 70.0071
 
 [node name="Character" type="Node2D" groups=["Unit"]]
 script = ExtResource("1_vsemf")
@@ -140,6 +143,14 @@ texture = ExtResource("8_w3083")
 [node name="HideUITimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="ClickCollision" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickCollision"]
+shape = SubResource("CircleShape2D_yt7r0")
 
 [connection signal="mouse_entered" from="CharacterUI" to="." method="_on_character_ui_mouse_entered"]
 [connection signal="mouse_exited" from="CharacterUI" to="." method="_on_character_ui_mouse_exited"]

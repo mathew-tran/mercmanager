@@ -27,6 +27,7 @@ offset_right = -1530.0
 offset_bottom = -911.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
 mouse_filter = 2
 script = ExtResource("1_fb0ub")
 
@@ -50,11 +51,13 @@ offset_left = -49.0
 offset_top = -23.5
 offset_right = 66.0
 offset_bottom = 131.5
+mouse_filter = 2
 metadata/_edit_group_ = true
 
 [node name="Face" type="TextureRect" parent="VBoxContainer"]
 custom_minimum_size = Vector2(115, 115)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_rhwta")
 expand_mode = 3
 stretch_mode = 5
