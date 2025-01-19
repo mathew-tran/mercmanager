@@ -20,6 +20,8 @@ func Setup(charInfo : CharacterInfo):
 	UpdateAffordability()
 
 func UpdateAffordability():
+	if is_instance_valid(Data) == false:
+		return
 	var bEnabled = Helper.GetShop().CanAfford(Data.Cost) and Helper.GetPlayerTeam().IsFull() == false
 	disabled = !bEnabled
 	if Helper.GetShop().CanAfford(Data.Cost) == false:
@@ -28,11 +30,18 @@ func UpdateAffordability():
 		$VBoxContainer/HBoxContainer/Label.modulate = Color.WHITE
 	
 func _on_button_up():
+	if disabled:
+		return
+		
 	Helper.GetShop().ReduceMoney(Data.Cost)
 	Helper.GetPlayerTeam().AddPog(Data)
 	$VBoxContainer/Label.text = "SOLD OUT"
+	$VBoxContainer/Frame.visible = false
+	$VBoxContainer/HBoxContainer.visible = false
 	modulate = Color.DIM_GRAY
 	disabled = true
+	Data = null
+	
 
 
 func _on_mouse_entered():
