@@ -115,3 +115,11 @@ func GetFocusPoint():
 	if result:
 		return result[0]
 	return null
+
+func RestartGame():
+	get_tree().reload_current_scene()
+	
+func _input(event):
+	if event.is_action_pressed("restart"):
+		RestartGame()
+	
