@@ -23,6 +23,12 @@ func GetHealthString():
 func GetHealthPercent() -> float:
 	return float(Health) / float(MaxHealth)
 
+func Heal(amount):
+	Health += amount
+	if Health >= MaxHealth:
+		Health = MaxHealth
+	Update.emit()
+	
 func TakeDamage(amount):
 	Health -= amount
 	Update.emit()

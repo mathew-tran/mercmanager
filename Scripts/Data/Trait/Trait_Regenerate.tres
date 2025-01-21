@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TraitRegenerate" load_steps=2 format=3 uid="uid://djr5plqwsogdg"]
+
+[ext_resource type="Script" path="res://Scripts/Data/Trait/Trait_Regenerate.gd" id="1_8440h"]
+
+[resource]
+script = ExtResource("1_8440h")
+Name = "Regen"
+Description = "Heal a bit after attacking"

@@ -26,6 +26,21 @@ func Setup():
 	if randi_range(0, 100) > 70:
 		StatValues.Damage += randi_range(1, 3)
 		StatValues.HP += randi_range(1, 4)
+	
+	print(GetFullName() + " update")
+	var lastingTraits : Array[Trait]
+	var chanceToLose = randi_range(10, 50)
+	for charTrait in Traits:
+		var result = randi_range(0, 100)
+		print("rolled: " + str(result) + "<= " + str(chanceToLose))
+		if result <= chanceToLose:
+			lastingTraits.append(charTrait)
+			print("trait kept: " + charTrait.Name)
+			chanceToLose += 20
+			Cost += 1
+		
+	Traits = lastingTraits
+			
 
 func GetFullName():
 	if GivenName == "":

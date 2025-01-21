@@ -5,7 +5,7 @@ class_name Shop
 @onready var Stock = $Stock
 
 var Money = 8
-var StoreStock = 3
+var StoreStock = 5
 
 signal UpdateMoney
 

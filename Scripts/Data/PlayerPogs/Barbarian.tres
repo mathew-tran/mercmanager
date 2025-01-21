@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterInfo" load_steps=9 format=3 uid="uid://63bfigroloi1"]
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=10 format=3 uid="uid://63bfigroloi1"]
 
 [ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="1_f3kih"]
 [ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Barbarian.png" id="1_jcwu6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="2_fikl4"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="3_166m0"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/Trait.gd" id="5_4l74i"]
+[ext_resource type="Resource" uid="uid://cmhu8fj1bisrw" path="res://Scripts/Data/Trait/Trait_Retaliate.tres" id="6_w6maf"]
 
 [sub_resource type="Resource" id="Resource_7yqou"]
 script = ExtResource("3_166m0")
@@ -23,5 +24,5 @@ Face = ExtResource("1_jcwu6")
 StatValues = SubResource("Resource_xmchx")
 Moves = SubResource("Resource_7yqou")
 Cost = 2
-Traits = Array[ExtResource("5_4l74i")]([])
+Traits = Array[ExtResource("5_4l74i")]([ExtResource("6_w6maf")])
 GivenNames = "Thorne, Kaida, Ragnar, Brannok, Valkra, Drevyn, Svara, Kordak, Brynja, Varek, Dagna, Garrik, Sigrun, Kaelgor, Haldra, Torric, Freya, Darok, Oryn, Zarka"

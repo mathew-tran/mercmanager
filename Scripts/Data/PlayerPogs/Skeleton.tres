@@ -14,7 +14,7 @@ Move2 = ExtResource("3_ejfi4")
 
 [sub_resource type="Resource" id="Resource_m4fto"]
 script = ExtResource("3_hhsmd")
-HP = 50
+HP = 15
 Damage = 2
 
 [resource]
@@ -23,6 +23,6 @@ Name = "Sword Skeleton"
 Face = ExtResource("1_gn4vj")
 StatValues = SubResource("Resource_m4fto")
 Moves = SubResource("Resource_007vb")
-Cost = 1
+Cost = 3
 Traits = Array[ExtResource("6_hp4ah")]([ExtResource("7_1nt6p")])
 GivenNames = "Graveblade, Morven, Cindral, Duskmarrow, Valthorn, Shadryk, Kharak, Nytheris, Sephtor, Drynoss, Marrowveil, Zalkrin, Ossivar, Rathul, Calvaris, Blightfang, Serrak, Venmor, Skelder, Arkanis"

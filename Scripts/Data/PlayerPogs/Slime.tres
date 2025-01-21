@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=10 format=3 uid="uid://bwu7qgnxtypjd"]
+
+[ext_resource type="Texture2D" uid="uid://bet7y5ddhgf3y" path="res://Art/Characters/Slime.png" id="1_8no4p"]
+[ext_resource type="Resource" uid="uid://ee0of3smph37" path="res://Scripts/Data/DataType/Move/AttackMove_SlimeWhip.tres" id="2_iivut"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="3_o45q4"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="4_ib1kg"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Trait.gd" id="5_1fhg1"]
+[ext_resource type="Resource" uid="uid://djr5plqwsogdg" path="res://Scripts/Data/Trait/Trait_Regenerate.tres" id="6_nt5kn"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="8_x4ui5"]
+
+[sub_resource type="Resource" id="Resource_kaip4"]
+script = ExtResource("3_o45q4")
+Move1 = ExtResource("2_iivut")
+
+[sub_resource type="Resource" id="Resource_l7xi7"]
+script = ExtResource("4_ib1kg")
+HP = 25
+Damage = 0
+
+[resource]
+script = ExtResource("8_x4ui5")
+Name = "Slime"
+Face = ExtResource("1_8no4p")
+StatValues = SubResource("Resource_l7xi7")
+Moves = SubResource("Resource_kaip4")
+Cost = 2
+Traits = Array[ExtResource("5_1fhg1")]([ExtResource("6_nt5kn")])
+GivenNames = "Gloop, Blorv, Slorbin, Dribble, Oozo, Glimmy, Splat, Viscor, Blobbo, Squib, Gelix, Plorpy, Mucklin, Glorpix, Slitho, Quibber, Flubbit, Goobar, Squishka, Oozerion"

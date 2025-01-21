@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AttackMove" load_steps=5 format=3 uid="uid://ee0of3smph37"]
+
+[ext_resource type="Texture2D" uid="uid://by1qq1s4ew45s" path="res://Art/Projectiles/SlimeWhip.png" id="1_5146v"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveEffect.gd" id="2_i0705"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/AttackMove.gd" id="3_6a3fl"]
+
+[sub_resource type="Resource" id="Resource_vj5bx"]
+script = ExtResource("2_i0705")
+MoveImage = ExtResource("1_5146v")
+Duration = 0.1
+SpawnType = 0
+
+[resource]
+script = ExtResource("3_6a3fl")
+BaseDamage = 1
+DamageRange = 2
+HitAmount = 3
+Name = "SlimeWhip"
+PercentChance = 85
+MoveDescription = "Attack upto 3 times."
+MoveRange = 120
+TimeToActive = 0.2
+Effect = SubResource("Resource_vj5bx")

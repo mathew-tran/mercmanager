@@ -19,9 +19,9 @@ border_width_right = 2
 border_width_bottom = 2
 
 [node name="MoveInfoButton" type="Panel"]
-custom_minimum_size = Vector2(150, 75)
+custom_minimum_size = Vector2(150, 95)
 offset_right = 150.0
-offset_bottom = 75.0
+offset_bottom = 91.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_drmol")
 script = ExtResource("1_y1id8")
 
@@ -34,9 +34,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -75.0
-offset_top = -48.0
+offset_top = -54.0
 offset_right = 37.0
-offset_bottom = 64.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
@@ -77,9 +77,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -69.0
-offset_top = -19.0
+offset_top = -28.0
 offset_right = 79.0
-offset_bottom = 55.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 2
@@ -105,12 +105,12 @@ theme_override_font_sizes/font_size = 11
 text = "70%"
 
 [node name="Description" type="Label" parent="."]
-custom_minimum_size = Vector2(147, 27)
+custom_minimum_size = Vector2(140, 27)
 layout_mode = 2
-offset_left = 6.0
-offset_top = 58.0
-offset_right = 189.0
-offset_bottom = 85.0
+offset_left = 4.0
+offset_top = 64.0
+offset_right = 144.0
+offset_bottom = 91.0
 theme_override_font_sizes/font_size = 10
 text = "Hits from afar"
 autowrap_mode = 2

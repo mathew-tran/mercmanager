@@ -17,7 +17,7 @@ func Decide():
 	
 	if CharRef.GetHealthComponent().GetHealthPercent() < .5:
 		var result = randf_range(0, 100)
-		if result > 50:
+		if result > 80:
 			CurrentState = AI_STATE.RUN_AWAY
 		else:
 			CurrentState = AI_STATE.ATTACK
@@ -101,7 +101,7 @@ func IsCloseToPosition(charRef : Character, newPosition):
 	if is_instance_valid(MoveToUse):
 		return charRef.global_position.distance_to(newPosition) < MoveToUse.MoveRange
 	else:
-		return charRef.global_position.distance_to(newPosition) < 600
+		return charRef.global_position.distance_to(newPosition) < 400
 		
 func Cleanup():
 	MoveToUse = null
