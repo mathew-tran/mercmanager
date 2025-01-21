@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wgt50gdfky0i"
-path="res://.godot/imported/Skeleton.png-533c8921b7795f87bd584465bb3375bd.ctex"
+uid="uid://c3h1cd8m347e8"
+path="res://.godot/imported/Enemies.svg-d4bee76203e8ff38638c12e626745841.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemies/Skeleton.png"
-dest_files=["res://.godot/imported/Skeleton.png-533c8921b7795f87bd584465bb3375bd.ctex"]
+source_file="res://Art/Enemies.svg"
+dest_files=["res://.godot/imported/Enemies.svg-d4bee76203e8ff38638c12e626745841.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

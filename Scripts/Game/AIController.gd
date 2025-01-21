@@ -28,7 +28,7 @@ func Decide():
 	if CurrentState == AI_STATE.ATTACK:
 		MoveToUse = CharRef.CharacterData.Moves.DecideRandomMove()
 	else:
-		MoveToUse = null
+		Cleanup()
 	
 func Telegraph():
 	
@@ -71,7 +71,10 @@ func SetAIState(aiState : AI_STATE):
 func RunTrait(traitType : Trait.EXECUTION_TIME):
 	for charTrait in CharRef.CharacterData.Traits:
 		if charTrait.ExecutionType == traitType:
+			if CharRef.GetHealthComponent().IsAlive() == false:
+				return
 			CharRef.Speak("!!!")
+			CharRef.GetAI().Cleanup()
 			await get_tree().create_timer(1.2).timeout
 			print(CharRef.CharacterData.GetFullName() +  " runs trait " + charTrait.GetTraitText())
 			await charTrait.Execute(CharRef)
@@ -98,4 +101,7 @@ func IsCloseToPosition(charRef : Character, newPosition):
 	if is_instance_valid(MoveToUse):
 		return charRef.global_position.distance_to(newPosition) < MoveToUse.MoveRange
 	else:
-		return charRef.global_position.distance_to(newPosition) < 400
+		return charRef.global_position.distance_to(newPosition) < 600
+		
+func Cleanup():
+	MoveToUse = null

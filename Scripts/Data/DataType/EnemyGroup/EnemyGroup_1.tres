@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="1_jp3ws"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/EnemyGroup.gd" id="2_chgmx"]
-[ext_resource type="Resource" uid="uid://cbhisiuybw3ln" path="res://Scripts/Data/Enemies/Skeleton.tres" id="2_ln14f"]
+[ext_resource type="Resource" uid="uid://crs2rmjl43k3h" path="res://Scripts/Data/Enemies/MegaFly.tres" id="2_ll8cu"]
 
 [resource]
 script = ExtResource("2_chgmx")
-Characters = Array[ExtResource("1_jp3ws")]([ExtResource("2_ln14f")])
+Characters = Array[ExtResource("1_jp3ws")]([ExtResource("2_ll8cu"), ExtResource("2_ll8cu")])

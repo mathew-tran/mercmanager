@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AttackMove" load_steps=5 format=3 uid="uid://ctyo8xq4ka08y"]
+
+[ext_resource type="Texture2D" uid="uid://b5hnf6iarl8ej" path="res://Art/Projectiles/Spit.png" id="1_2hb2a"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveEffect.gd" id="2_82qyd"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/AttackMove.gd" id="3_ttc8a"]
+
+[sub_resource type="Resource" id="Resource_3egw8"]
+script = ExtResource("2_82qyd")
+MoveImage = ExtResource("1_2hb2a")
+Duration = 0.3
+SpawnType = 0
+
+[resource]
+script = ExtResource("3_ttc8a")
+BaseDamage = 1
+DamageRange = 1
+HitAmount = 5
+Name = "Spit"
+PercentChance = 85
+MoveDescription = "Spits at the target multiple times."
+MoveRange = 250
+TimeToActive = 0.2
+Effect = SubResource("Resource_3egw8")

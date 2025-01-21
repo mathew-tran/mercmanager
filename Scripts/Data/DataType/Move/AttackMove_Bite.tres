@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AttackMove" load_steps=5 format=3 uid="uid://dbgm0842o8v7h"]
+
+[ext_resource type="Texture2D" uid="uid://bgx0pesiywm2" path="res://Art/Projectiles/Bite.png" id="1_31ojb"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/AttackMove.gd" id="1_rwjtm"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveEffect.gd" id="2_2jcxq"]
+
+[sub_resource type="Resource" id="Resource_3uimk"]
+script = ExtResource("2_2jcxq")
+MoveImage = ExtResource("1_31ojb")
+Duration = 0.5
+SpawnType = 1
+
+[resource]
+script = ExtResource("1_rwjtm")
+BaseDamage = 3
+DamageRange = 2
+HitAmount = 1
+Name = "Bite"
+PercentChance = 85
+MoveDescription = "Bites the target"
+MoveRange = 120
+TimeToActive = 0.2
+Effect = SubResource("Resource_3uimk")

@@ -41,8 +41,10 @@ func SpawnInTeam(teamType):
 		if is_instance_valid(units[index]):
 			var instance = load("res://Prefabs/Character.tscn").instantiate()
 			instance.CharacterData = units[index]
+			
 			instance.Team = teamType
 			instance.global_position = spawnPositions.get_child(index).GetSpawnPosition()
+			instance.Setup()
 			Characters.add_child(instance)
 			
 	await get_tree().process_frame

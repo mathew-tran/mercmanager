@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=11 format=3 uid="uid://crs2rmjl43k3h"]
+
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Trait.gd" id="1_auhcp"]
+[ext_resource type="Texture2D" uid="uid://drspxxs8rskmu" path="res://Art/Enemies/Megafly.png" id="1_cym4k"]
+[ext_resource type="Resource" uid="uid://dbgm0842o8v7h" path="res://Scripts/Data/DataType/Move/AttackMove_Bite.tres" id="2_2x60u"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="2_a4ca2"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="2_unqfs"]
+[ext_resource type="Resource" uid="uid://ctyo8xq4ka08y" path="res://Scripts/Data/DataType/Move/AttackMove_Spit.tres" id="3_07vju"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="3_ossja"]
+[ext_resource type="Resource" uid="uid://dgyq31ews7rlx" path="res://Scripts/Data/Trait/Trait_Runaway.tres" id="6_ogjuw"]
+
+[sub_resource type="Resource" id="Resource_mg7n4"]
+script = ExtResource("3_ossja")
+Move1 = ExtResource("2_2x60u")
+Move2 = ExtResource("3_07vju")
+
+[sub_resource type="Resource" id="Resource_wdmio"]
+script = ExtResource("2_a4ca2")
+HP = 25
+Damage = 1
+
+[resource]
+script = ExtResource("2_unqfs")
+Name = "MegaFly"
+Face = ExtResource("1_cym4k")
+StatValues = SubResource("Resource_wdmio")
+Moves = SubResource("Resource_mg7n4")
+Cost = 2
+Traits = Array[ExtResource("1_auhcp")]([ExtResource("6_ogjuw")])
+GivenNames = ""
