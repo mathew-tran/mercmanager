@@ -8,7 +8,11 @@ var GrowthRate = 2
 
 func _ready():
 	Helper.GetBattleSystem().TellGameState.connect(OnTellGameState)
+	Helper.GetShop().UpdateMoney.connect(OnUpdateMoney)
 	Reset()
+	
+func OnUpdateMoney():
+	UpdateUI()
 	
 func _on_button_up():
 	if Helper.GetShop().CanAfford(CurrentCost):

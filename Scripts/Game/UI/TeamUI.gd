@@ -16,9 +16,9 @@ func _ready():
 func UpdateTeam():
 	for x in range(0, len(TeamSlots.get_children())):
 		if x < len(Team) and is_instance_valid(Team[x]):
-			TeamSlots.get_child(x).Setup(Team[x])
+			TeamSlots.get_child(x).Setup(Team[x], x)
 		else:
-			TeamSlots.get_child(x).Setup(null)
+			TeamSlots.get_child(x).Setup(null, -1)
 	
 func GetUnits():
 	return Team
@@ -36,3 +36,9 @@ func AddPog(charInfo : CharacterInfo):
 			break
 	UpdateTeam()
 	TeamUpdate.emit()
+
+func RemovePog(index):
+	if is_instance_valid(Team[index]):
+		Team[index] = null
+		UpdateTeam()
+		TeamUpdate.emit()
