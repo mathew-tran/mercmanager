@@ -45,4 +45,4 @@ func Setup():
 func GetFullName():
 	if GivenName == "":
 		return Name
-	return 	GivenName + " the "  + Name
+	return 	Name +  " " + GivenName

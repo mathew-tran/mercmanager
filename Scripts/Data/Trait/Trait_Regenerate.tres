@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_8440h")
 Name = "Regen"
-Description = "Heal a bit after attacking"
+Description = "Heal a bit after turn ends."

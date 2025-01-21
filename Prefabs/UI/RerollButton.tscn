@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpta4ynfbanrn"]
+
+[ext_resource type="Script" path="res://Scripts/Game/UI/RerollButton.gd" id="1_cacov"]
+[ext_resource type="Texture2D" uid="uid://e2c4066hnaa5" path="res://Art/Coin.png" id="2_phk12"]
+
+[node name="RerollButton" type="Button"]
+custom_minimum_size = Vector2(400, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_cacov")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+mouse_filter = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "REROLL"
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+offset_left = 4.0
+offset_top = 22.0
+offset_right = 104.0
+offset_bottom = 82.0
+mouse_filter = 2
+texture = ExtResource("2_phk12")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Amount" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "6"
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

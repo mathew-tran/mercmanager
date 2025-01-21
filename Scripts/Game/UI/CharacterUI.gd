@@ -24,7 +24,8 @@ func OnUpdate():
 	$ActiveUI/HP.value = CharacterRef.GetHealthComponent().GetHealthPercent() * 100
 	
 func OnDeath():
-	$Face.rotation_degrees = 90
+	$Face.rotation_degrees = randf_range(0, 360)
+	$Face.flip_h = randi() % 1
 	modulate = "737373"
 	CharacterRef.z_as_relative = false
 	CharacterRef.z_index = -100

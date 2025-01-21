@@ -10,6 +10,9 @@ func Execute(owner : Character, targets : Array[Character]):
 	if HasMoveSucceeded():
 		for x in range(0, HitAmount):
 			for target in targets:
+				if owner.GetHealthComponent().IsAlive() == false: # This is to cover incase target retaliates or move hurts user
+					return
+					
 				if HasMoveSucceeded() or x == 0:
 					Helper.GetFocusPoint().global_position = lerp(owner.global_position, target.global_position, .5)
 					await Helper.GetFollowCamera().FocusObject(Helper.GetFocusPoint())
