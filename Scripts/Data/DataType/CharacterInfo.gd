@@ -37,6 +37,10 @@ func Setup():
 	print(GetFullName() + " update")
 	var lastingTraits : Array[Trait]
 	var chanceToLose = randi_range(10, 50)
+	if Rarity == RARITY.RARE:
+		chanceToLose -= 20
+	elif Rarity == RARITY.LEGENDARY:
+		chanceToLose -= 30
 	for charTrait in Traits:
 		var result = randi_range(0, 100)
 		print("rolled: " + str(result) + "<= " + str(chanceToLose))

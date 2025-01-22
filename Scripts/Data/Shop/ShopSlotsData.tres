@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="ShopSlotsData" load_steps=8 format=3 uid="uid://c2c71rhjljceb"]
+
+[ext_resource type="Script" path="res://Scripts/Data/ShopSlotData.gd" id="1_18yj3"]
+[ext_resource type="Script" path="res://Scripts/Data/ShopSlotsData.gd" id="1_lhbjr"]
+
+[sub_resource type="Resource" id="Resource_mx5co"]
+script = ExtResource("1_18yj3")
+NormalChance = 100
+RareChance = 0
+LegendaryChance = 0
+
+[sub_resource type="Resource" id="Resource_y5ce6"]
+script = ExtResource("1_18yj3")
+NormalChance = 99
+RareChance = 1
+LegendaryChance = 0
+
+[sub_resource type="Resource" id="Resource_w1ori"]
+script = ExtResource("1_18yj3")
+NormalChance = 95
+RareChance = 3
+LegendaryChance = 2
+
+[sub_resource type="Resource" id="Resource_glleb"]
+script = ExtResource("1_18yj3")
+NormalChance = 90
+RareChance = 6
+LegendaryChance = 4
+
+[sub_resource type="Resource" id="Resource_mfror"]
+script = ExtResource("1_18yj3")
+NormalChance = 85
+RareChance = 10
+LegendaryChance = 5
+
+[resource]
+script = ExtResource("1_lhbjr")
+Slots = Array[ExtResource("1_18yj3")]([SubResource("Resource_mx5co"), SubResource("Resource_y5ce6"), SubResource("Resource_w1ori"), SubResource("Resource_glleb"), SubResource("Resource_mfror")])

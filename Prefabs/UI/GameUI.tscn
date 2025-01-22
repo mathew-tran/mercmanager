@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://3l11qm3o02te"]
+[gd_scene load_steps=12 format=3 uid="uid://3l11qm3o02te"]
 
 [ext_resource type="PackedScene" uid="uid://8fedrthhcdfm" path="res://Prefabs/UI/TeamUI.tscn" id="1_0gone"]
 [ext_resource type="Script" path="res://Scripts/Game/UI/GameUI.gd" id="1_442ia"]
 [ext_resource type="Texture2D" uid="uid://wiqyhbyllo76" path="res://Art/UI/PlayButton.png" id="2_h8wha"]
 [ext_resource type="Script" path="res://Scripts/Game/Shop.gd" id="2_takq8"]
+[ext_resource type="Resource" uid="uid://c2c71rhjljceb" path="res://Scripts/Data/Shop/ShopSlotsData.tres" id="3_77xf5"]
 [ext_resource type="PackedScene" uid="uid://qu1ysjysh7mu" path="res://Prefabs/UI/PurchasePogButton.tscn" id="4_t5kl4"]
 [ext_resource type="Texture2D" uid="uid://e2c4066hnaa5" path="res://Art/Coin.png" id="5_k530y"]
 [ext_resource type="Script" path="res://Scripts/Game/UI/PlayerCoinText.gd" id="5_qh772"]
@@ -24,6 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cnei0")
 script = ExtResource("2_takq8")
+ShopSlotDataRef = ExtResource("3_77xf5")
 
 [node name="Team" parent="Shop" groups=["PlayerTeam"] instance=ExtResource("1_0gone")]
 layout_mode = 0

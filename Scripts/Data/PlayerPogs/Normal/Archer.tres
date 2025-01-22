@@ -26,4 +26,5 @@ StatValues = SubResource("Resource_l7xi7")
 Moves = SubResource("Resource_kaip4")
 Cost = 1
 Traits = Array[ExtResource("5_0rgty")]([ExtResource("6_07gfk"), ExtResource("7_8nbla")])
+Rarity = 0
 GivenNames = "Rylan, Kaela, Daryn, Liora, Zane, Alina, Kieran, Mira, Ashen, Taryn, Silas, Lyric, Rowan, Evryn, Calla, Jace, Arlen, Renna, Quinn, Kyra"

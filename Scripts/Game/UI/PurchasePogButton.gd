@@ -53,4 +53,5 @@ func _on_mouse_entered():
 
 
 func _on_mouse_exited():
-	Helper.GetCharInfoUI().HideInfo()
+	if is_instance_valid(Helper.GetCharInfoUI()):
+		Helper.GetCharInfoUI().HideInfo()

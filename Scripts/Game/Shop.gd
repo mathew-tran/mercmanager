@@ -4,8 +4,9 @@ class_name Shop
 
 @onready var Stock = $Stock
 
-var Money = 8
-var StoreStock = 5
+var Money = 10
+
+@export var ShopSlotDataRef : ShopSlotsData
 
 signal UpdateMoney
 
@@ -28,14 +29,25 @@ func PopulateStock():
 		stock.queue_free()
 	
 	var Items = []
-	var pogs = Helper.GetAllFilePaths("res://Scripts/Data/PlayerPogs/")
+	var normalPogs = Helper.GetAllFilePaths("res://Scripts/Data/PlayerPogs/Normal")
+	var rarePogs = Helper.GetAllFilePaths("res://Scripts/Data/PlayerPogs/Rare")
+	var legendaryPogs = Helper.GetAllFilePaths("res://Scripts/Data/PlayerPogs/Legendary")
 	
 	await get_tree().process_frame
-	for index in range(0, StoreStock):
-		pogs.shuffle()
+	for slotInfo in ShopSlotDataRef.Slots:
+		var chosenBucket = null
+		var result = randi_range(0, 100)
+		if result <= slotInfo.NormalChance:
+			chosenBucket = normalPogs
+		elif result <= slotInfo.NormalChance + slotInfo.RareChance:
+			chosenBucket = rarePogs
+		else:
+			chosenBucket = legendaryPogs
+		print(result)
+		chosenBucket.shuffle()
 		
 		var instance = load("res://Prefabs/UI/PurchasePogButton.tscn").instantiate()
-		instance.Setup(load(pogs[0]))
+		instance.Setup(load(chosenBucket[0]))
 		Stock.add_child(instance)
 	
 	UpdateMoney.emit()

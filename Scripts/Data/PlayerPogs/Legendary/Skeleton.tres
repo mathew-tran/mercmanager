@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=10 format=3 uid="uid://cbhisiuybw3ln"]
+
+[ext_resource type="Texture2D" uid="uid://wgt50gdfky0i" path="res://Art/Characters/Skeleton.png" id="1_5mcrh"]
+[ext_resource type="Resource" uid="uid://c4h2yf4klqfqr" path="res://Scripts/Data/DataType/Move/AttackMove_Slash.tres" id="2_ifpnw"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="3_ca4s1"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="4_iugxg"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Trait.gd" id="5_n0s44"]
+[ext_resource type="Resource" uid="uid://cmhu8fj1bisrw" path="res://Scripts/Data/Trait/Trait_Retaliate.tres" id="6_y6wd2"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="7_3em3t"]
+
+[sub_resource type="Resource" id="Resource_007vb"]
+script = ExtResource("3_ca4s1")
+Move1 = ExtResource("2_ifpnw")
+
+[sub_resource type="Resource" id="Resource_m4fto"]
+script = ExtResource("4_iugxg")
+HP = 15
+Damage = 2
+
+[resource]
+script = ExtResource("7_3em3t")
+Name = "Sword Skeleton"
+Face = ExtResource("1_5mcrh")
+StatValues = SubResource("Resource_m4fto")
+Moves = SubResource("Resource_007vb")
+Cost = 8
+Traits = Array[ExtResource("5_n0s44")]([ExtResource("6_y6wd2")])
+Rarity = 2
+GivenNames = "Graveblade, Morven, Cindral, Duskmarrow, Valthorn, Shadryk, Kharak, Nytheris, Sephtor, Drynoss, Marrowveil, Zalkrin, Ossivar, Rathul, Calvaris, Blightfang, Serrak, Venmor, Skelder, Arkanis"
