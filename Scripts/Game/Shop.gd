@@ -43,7 +43,6 @@ func PopulateStock():
 			chosenBucket = rarePogs
 		else:
 			chosenBucket = legendaryPogs
-		print(result)
 		chosenBucket.shuffle()
 		
 		var instance = load("res://Prefabs/UI/PurchasePogButton.tscn").instantiate()

@@ -8,7 +8,7 @@ class_name CharacterInfo
 
 @export var Moves : MoveList
 @export var Cost = 1
-
+@export var UpgradeCost = 1
 @export var Traits : Array[Trait]
 @export var Rarity : RARITY
 
@@ -34,7 +34,6 @@ func Setup():
 		StatValues.Damage += randi_range(1, 3)
 		StatValues.HP += randi_range(1, 4)
 	
-	print(GetFullName() + " update")
 	var lastingTraits : Array[Trait]
 	var chanceToLose = randi_range(10, 50)
 	if Rarity == RARITY.RARE:
@@ -43,10 +42,8 @@ func Setup():
 		chanceToLose -= 30
 	for charTrait in Traits:
 		var result = randi_range(0, 100)
-		print("rolled: " + str(result) + "<= " + str(chanceToLose))
 		if result <= chanceToLose:
 			lastingTraits.append(charTrait)
-			print("trait kept: " + charTrait.Name)
 			chanceToLose += 20
 			Cost += 1
 		
