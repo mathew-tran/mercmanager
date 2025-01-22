@@ -13,7 +13,7 @@ enum EXECUTION_TIME {
 var ExecutionType : EXECUTION_TIME
 
 func GetTraitText():
-	return Name + " - " + Description
+	return "[" + Name + "] " + Description
 	
 func Execute(charRef : Character):
 	pass

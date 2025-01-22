@@ -22,12 +22,15 @@ func Setup():
 	$CharacterUI.Setup(self)
 	$AIController.CharRef = self
 	$HPComponent.TakenDamage.connect(OnTakenDamage)
+	$HPComponent.OnDeath.connect(OnDeath)
 	show_behind_parent = true
 	
 	CharacterData.Traits = CharacterData.Traits.duplicate(true)
 	for charTrait in CharacterData.Traits:
 		charTrait.Setup()
 	
+func OnDeath():
+	$HitParticle.emitting = true
 	
 func GetAI() -> AIController:
 	return $AIController
