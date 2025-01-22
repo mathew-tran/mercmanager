@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://qu1ysjysh7mu"]
 
-[ext_resource type="Texture2D" uid="uid://dl2nckq33ucy4" path="res://Art/UI/Frame.png" id="1_b5h5n"]
 [ext_resource type="Script" path="res://Scripts/Game/UI/PurchasePogButton.gd" id="1_v7ib4"]
 [ext_resource type="Texture2D" uid="uid://dhpd08noiq48g" path="res://Art/Characters/Archer.png" id="2_l4psa"]
+[ext_resource type="PackedScene" uid="uid://jg1gac10pqvt" path="res://Prefabs/Frame.tscn" id="2_o8pxo"]
 [ext_resource type="Texture2D" uid="uid://e2c4066hnaa5" path="res://Art/Coin.png" id="3_fkyy4"]
 
 [node name="Button" type="Button"]
@@ -24,9 +24,8 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Frame" type="TextureRect" parent="VBoxContainer"]
+[node name="Frame" parent="VBoxContainer" instance=ExtResource("2_o8pxo")]
 layout_mode = 2
-texture = ExtResource("1_b5h5n")
 
 [node name="Face" type="TextureRect" parent="VBoxContainer/Frame"]
 layout_mode = 1
@@ -35,10 +34,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = -56.0
-offset_right = 56.0
-offset_bottom = 56.0
+offset_left = -60.0
+offset_top = -55.5
+offset_right = 59.0
+offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_l4psa")

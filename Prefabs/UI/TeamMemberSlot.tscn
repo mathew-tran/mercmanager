@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cttiymsodcvro"]
 
 [ext_resource type="Script" path="res://Scripts/Game/UI/TeamMemberSlot.gd" id="1_krfvw"]
-[ext_resource type="Texture2D" uid="uid://dl2nckq33ucy4" path="res://Art/UI/Frame.png" id="1_yahni"]
+[ext_resource type="PackedScene" uid="uid://jg1gac10pqvt" path="res://Prefabs/Frame.tscn" id="2_7l1go"]
 [ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Barbarian.png" id="3_ixm3k"]
 [ext_resource type="Texture2D" uid="uid://e2c4066hnaa5" path="res://Art/Coin.png" id="4_ikjh0"]
 
@@ -9,10 +9,10 @@
 bg_color = Color(0.788235, 0.219608, 0.392157, 1)
 
 [node name="TeamMemberSlot" type="Button"]
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(160, 160)
 script = ExtResource("1_krfvw")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Frame" parent="." instance=ExtResource("2_7l1go")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,12 +20,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -56.5
-offset_top = -65.5
+offset_top = -70.5
 offset_right = 56.5
-offset_bottom = 45.5
+offset_bottom = 40.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yahni")
 
 [node name="Face" type="TextureRect" parent="."]
 layout_mode = 1
@@ -43,17 +42,17 @@ grow_vertical = 2
 texture = ExtResource("3_ixm3k")
 
 [node name="Label" type="Label" parent="."]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -32.0
-offset_right = 50.0
-offset_bottom = 10.0
+offset_left = -75.0
+offset_top = -43.0
+offset_right = 75.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -61,11 +60,13 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
 text = "asdasdasda"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 2
 
 [node name="SellPopup" type="Panel" parent="."]
 visible = false
+z_index = 3
+z_as_relative = false
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 8

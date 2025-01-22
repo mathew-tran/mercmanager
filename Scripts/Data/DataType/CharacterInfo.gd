@@ -10,6 +10,13 @@ class_name CharacterInfo
 @export var Cost = 1
 
 @export var Traits : Array[Trait]
+@export var Rarity : RARITY
+
+enum RARITY {
+	NORMAL,
+	RARE,
+	LEGENDARY
+}
 
 var ActivationRange = 400
 

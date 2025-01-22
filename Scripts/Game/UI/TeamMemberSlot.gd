@@ -4,17 +4,18 @@ var CharInfoRef : CharacterInfo
 
 var Index = 0
 func Setup(character : CharacterInfo, index):
+	$Frame.visible = false
 	if is_instance_valid(character):
 		CharInfoRef = character
 		$Face.texture = CharInfoRef.Face
 		$Label.text = CharInfoRef.GetFullName()
-		$TextureRect.modulate = Color.DIM_GRAY
 		Index = index
+		$Frame.UpdateRarity(CharInfoRef.Rarity)
+		$Frame.visible = true
 	else:
 		CharInfoRef = null
 		$Face.texture = null
 		$Label.text = ""
-		$TextureRect.modulate = Color.DARK_GRAY
 		Index = -1
 
 func GetSaleCost():

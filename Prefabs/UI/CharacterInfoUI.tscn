@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://jyov1mr68amj"]
+[gd_scene load_steps=7 format=3 uid="uid://jyov1mr68amj"]
 
 [ext_resource type="Script" path="res://Scripts/Game/UI/CharacterInfoUI.gd" id="1_fb0ub"]
 [ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Barbarian.png" id="1_rhwta"]
 [ext_resource type="PackedScene" uid="uid://cevg3png80cwf" path="res://Prefabs/UI/MoveInfoButton.tscn" id="3_b3kjb"]
 [ext_resource type="StyleBox" uid="uid://n27ax52by62k" path="res://Styles/StatStyle.tres" id="4_hjjxv"]
 [ext_resource type="PackedScene" uid="uid://dm0xf6xb0tu1a" path="res://Prefabs/UI/TraitText.tscn" id="5_wh4hi"]
+[ext_resource type="PackedScene" uid="uid://jg1gac10pqvt" path="res://Prefabs/Frame.tscn" id="6_smxui"]
 
 [node name="CharacterStat" type="Panel" groups=["CharacterInfoUI"]]
 custom_minimum_size = Vector2(315, 170)
@@ -38,9 +39,9 @@ autowrap_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -49.0
-offset_top = -23.5
+offset_top = -32.1667
 offset_right = 66.0
-offset_bottom = 131.5
+offset_bottom = 122.833
 mouse_filter = 2
 metadata/_edit_group_ = true
 
@@ -119,3 +120,11 @@ offset_bottom = 251.0
 
 [node name="Panel" parent="TraitsPanel" instance=ExtResource("5_wh4hi")]
 layout_mode = 2
+
+[node name="Frame" parent="." instance=ExtResource("6_smxui")]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = -47.3333
+offset_top = -32.6667
+offset_right = 65.6667
+offset_bottom = 78.3333

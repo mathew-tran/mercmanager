@@ -17,6 +17,7 @@ func Setup(charInfo : CharacterInfo):
 	Data = Data.duplicate(true)
 	Data.Setup()
 	$VBoxContainer/Frame/Face.texture = Data.Face
+	$VBoxContainer/Frame.UpdateRarity(Data.Rarity)
 	$VBoxContainer/Label.text = Data.GetFullName()
 	$VBoxContainer/HBoxContainer/Label.text = str(Data.Cost)
 	UpdateAffordability()

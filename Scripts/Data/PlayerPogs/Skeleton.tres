@@ -25,4 +25,5 @@ StatValues = SubResource("Resource_m4fto")
 Moves = SubResource("Resource_007vb")
 Cost = 3
 Traits = Array[ExtResource("6_hp4ah")]([ExtResource("7_1nt6p")])
+Rarity = 2
 GivenNames = "Graveblade, Morven, Cindral, Duskmarrow, Valthorn, Shadryk, Kharak, Nytheris, Sephtor, Drynoss, Marrowveil, Zalkrin, Ossivar, Rathul, Calvaris, Blightfang, Serrak, Venmor, Skelder, Arkanis"

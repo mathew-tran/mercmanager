@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://jg1gac10pqvt"]
+
+[ext_resource type="Texture2D" uid="uid://dl2nckq33ucy4" path="res://Art/UI/Frame.png" id="1_qioyp"]
+[ext_resource type="Script" path="res://Scripts/Game/UI/Frame.gd" id="2_4nxh5"]
+[ext_resource type="Texture2D" uid="uid://b87lnpr4f1323" path="res://Art/UI/Rarity/3.png" id="2_qgtvu"]
+
+[node name="Frame" type="TextureRect"]
+offset_right = 113.0
+offset_bottom = 111.0
+mouse_filter = 2
+texture = ExtResource("1_qioyp")
+script = ExtResource("2_4nxh5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -16.0
+offset_right = 56.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_qgtvu")
+stretch_mode = 5
