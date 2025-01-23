@@ -12,6 +12,7 @@ enum TEAM {
 }
 
 signal CompletedTakingDamage
+signal ActiveUpdate(bActive)
 
 var bHovered = false
 
@@ -51,6 +52,7 @@ func GetHealthComponent() -> HealthComponent:
 	return $HPComponent
 	
 func RunInput():
+	ActiveUpdate.emit(true)
 	$ActiveSymbol.visible = true
 	ShowUI(true)
 	show_behind_parent = true
@@ -70,6 +72,7 @@ func RunInput():
 	$ActiveSymbol.visible = false
 	show_behind_parent = false
 	ShowUI(false)
+	ActiveUpdate.emit(false)
 
 func ShowUI(bShow):
 	if bShow == false:

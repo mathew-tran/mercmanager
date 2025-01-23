@@ -5,15 +5,28 @@ class_name PlayerTeam
 @onready var TeamSlots = $GridContainer
 @export var Team : Array[CharacterInfo]
 
-var TeamSize = 9
+var TeamSize = 6
 signal TeamUpdate
 
 func _ready():
-	UpdateTeam()
 	while len(Team) < TeamSize:
 		Team.append(null)
+		
+	for child in TeamSlots.get_children():
+		child.queue_free()
+		
+	for x in range(0, TeamSize):
+		var instance = load("res://Prefabs/UI/TeamMemberSlot.tscn").instantiate()
+		TeamSlots.add_child(instance)
+		
+		
+	UpdateTeam()
+
 
 func UpdateTeam():
+
+
+		
 	for x in range(0, len(TeamSlots.get_children())):
 		if x < len(Team) and is_instance_valid(Team[x]):
 			TeamSlots.get_child(x).Setup(Team[x], x)

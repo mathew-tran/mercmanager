@@ -6,14 +6,10 @@ func Setup(char : Character):
 	CharacterRef = char
 	$Face.texture = char.CharacterData.Face
 	$ActiveUI/Name.text = char.CharacterData.GetFullName()
-	$ActiveUI/Frame.UpdateRarity(char.CharacterData.Rarity)
+	$ActiveUI/Frame.UpdateFrame(char)
 	char.GetHealthComponent().Setup(char)
 	char.GetHealthComponent().Update.connect(OnUpdate)
 	char.GetHealthComponent().OnDeath.connect(OnDeath)
-	if char.Team == Character.TEAM.ENEMY:
-		$ActiveUI/Frame.self_modulate = "c93864ff"
-	else:
-		$ActiveUI/Frame.self_modulate = "35cbc8ff"
 		
 	$ActiveUI/Frame.ShowRarity(char.Team == Character.TEAM.PLAYER)
 	OnUpdate()

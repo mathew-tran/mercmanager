@@ -20,6 +20,7 @@ func StartRound():
 	await SpawnInTeam(Character.TEAM.PLAYER)
 	await SpawnInTeam(Character.TEAM.ENEMY)
 	CurrentState = GAME_STATE.PLAYING
+	TellGameState.emit(CurrentState)
 	PlayGame()
 	
 func KillExistingCharacters():
