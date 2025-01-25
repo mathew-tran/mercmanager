@@ -94,6 +94,10 @@ func GetEnemyResourceUnits():
 	var result = get_tree().get_nodes_in_group("EnemySpawner")
 	return result[0].GetUnits()
 
+func GetEnemySpawner():
+	var result = get_tree().get_nodes_in_group("EnemySpawner")
+	return result[0]
+	
 func GetCharacterHolder():
 	var result = get_tree().get_nodes_in_group("CharacterHolder")
 	return result

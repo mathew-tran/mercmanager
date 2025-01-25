@@ -40,12 +40,3 @@ layout_mode = 2
 
 [node name="TeamMemberSlot6" parent="GridContainer" instance=ExtResource("1_ijruc")]
 layout_mode = 2
-
-[node name="TeamMemberSlot7" parent="GridContainer" instance=ExtResource("1_ijruc")]
-layout_mode = 2
-
-[node name="TeamMemberSlot8" parent="GridContainer" instance=ExtResource("1_ijruc")]
-layout_mode = 2
-
-[node name="TeamMemberSlot9" parent="GridContainer" instance=ExtResource("1_ijruc")]
-layout_mode = 2

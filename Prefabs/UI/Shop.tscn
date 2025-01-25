@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwvrek3fggrtu"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Shop.gd" id="1_8pau5"]
+[ext_resource type="Resource" uid="uid://c2c71rhjljceb" path="res://Scripts/Data/Shop/ShopSlotsData.tres" id="2_hbmqd"]
+[ext_resource type="PackedScene" uid="uid://8fedrthhcdfm" path="res://Prefabs/UI/TeamUI.tscn" id="3_hnnyv"]
+[ext_resource type="PackedScene" uid="uid://qu1ysjysh7mu" path="res://Prefabs/UI/PurchasePogButton.tscn" id="4_pnguk"]
+[ext_resource type="Script" path="res://Scripts/Game/UI/PlayerCoinText.gd" id="5_t53ij"]
+[ext_resource type="Texture2D" uid="uid://e2c4066hnaa5" path="res://Art/Coin.png" id="6_s6a12"]
+[ext_resource type="PackedScene" uid="uid://dpta4ynfbanrn" path="res://Prefabs/UI/RerollButton.tscn" id="7_73r77"]
+[ext_resource type="Texture2D" uid="uid://wiqyhbyllo76" path="res://Art/UI/PlayButton.png" id="8_00g2y"]
+[ext_resource type="PackedScene" uid="uid://k0ccwbxctpp2" path="res://Prefabs/UI/EnemyMemberSlot.tscn" id="9_26aff"]
+[ext_resource type="Script" path="res://Scripts/Game/UI/EnemyList.gd" id="9_ughev"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnei0"]
+bg_color = Color(0.00453645, 0.00453645, 0.00453644, 1)
+
+[node name="Shop" type="Panel" groups=["Shop"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cnei0")
+script = ExtResource("1_8pau5")
+ShopSlotDataRef = ExtResource("2_hbmqd")
+
+[node name="Team" parent="." groups=["PlayerTeam"] instance=ExtResource("3_hnnyv")]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 97.0
+offset_right = 563.0
+offset_bottom = 643.0
+metadata/_edit_group_ = true
+
+[node name="Stock" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1182.0
+offset_top = 132.0
+offset_right = 1848.0
+offset_bottom = 432.0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Button" parent="Stock" instance=ExtResource("4_pnguk")]
+layout_mode = 2
+
+[node name="Button2" parent="Stock" instance=ExtResource("4_pnguk")]
+layout_mode = 2
+
+[node name="Button4" parent="Stock" instance=ExtResource("4_pnguk")]
+layout_mode = 2
+
+[node name="Button5" parent="Stock" instance=ExtResource("4_pnguk")]
+layout_mode = 2
+
+[node name="Button3" parent="Stock" instance=ExtResource("4_pnguk")]
+layout_mode = 2
+
+[node name="PlayerCoinText" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -187.0
+offset_top = 51.0
+offset_right = -105.0
+offset_bottom = 106.0
+grow_horizontal = 0
+script = ExtResource("5_t53ij")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="PlayerCoinText"]
+layout_mode = 2
+texture = ExtResource("6_s6a12")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="PlayerCoinText"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "6"
+
+[node name="RerollButton" parent="." instance=ExtResource("7_73r77")]
+layout_mode = 0
+offset_left = 1322.0
+offset_top = 460.0
+offset_right = 1722.0
+offset_bottom = 560.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1713.0
+offset_top = 888.0
+offset_right = 1824.0
+offset_bottom = 997.0
+icon = ExtResource("8_00g2y")
+icon_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Button"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -148.5
+offset_top = -6.0
+offset_right = 151.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "START ROUND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyList" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 554.0
+offset_top = 709.0
+offset_right = 1223.0
+offset_bottom = 844.0
+script = ExtResource("9_ughev")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EnemyList"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="EnemyList/VBoxContainer"]
+layout_mode = 2
+text = "Enemies Incoming!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="EnemyList/VBoxContainer"]
+layout_mode = 2
+
+[node name="EnemyMemberSlot" parent="EnemyList/VBoxContainer/HBoxContainer" instance=ExtResource("9_26aff")]
+layout_mode = 2
+
+[node name="EnemyMemberSlot2" parent="EnemyList/VBoxContainer/HBoxContainer" instance=ExtResource("9_26aff")]
+layout_mode = 2
+
+[node name="EnemyMemberSlot3" parent="EnemyList/VBoxContainer/HBoxContainer" instance=ExtResource("9_26aff")]
+layout_mode = 2
+
+[node name="EnemyMemberSlot4" parent="EnemyList/VBoxContainer/HBoxContainer" instance=ExtResource("9_26aff")]
+layout_mode = 2

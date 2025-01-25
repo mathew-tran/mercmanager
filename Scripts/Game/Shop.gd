@@ -4,7 +4,7 @@ class_name Shop
 
 @onready var Stock = $Stock
 
-var Money = 10
+var Money = 5
 
 @export var ShopSlotDataRef : ShopSlotsData
 
