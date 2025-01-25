@@ -17,3 +17,9 @@ func GetUnits():
 
 func GetGroup():
 	return load(GroupList[Index])
+
+func Increment():
+	Index += 1
+	if Index >= len(GroupList):
+		Index = Index - 1
+	EnemySpawnerUpdate.emit()

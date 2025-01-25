@@ -66,7 +66,9 @@ func PlayGame():
 		
 		if IsEnemyDead():
 			CurrentState = GAME_STATE.PLAYER_WIN
+			Helper.GetEnemySpawner().Increment()
 			Helper.GetShop().AddMoney(3)
+			
 			break
 			
 		index += 1

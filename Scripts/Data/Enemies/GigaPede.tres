@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=10 format=3 uid="uid://crt6ps5heakn5"]
+
+[ext_resource type="Texture2D" uid="uid://dijf3rxh3u4qw" path="res://Art/Enemies/Gigapede.png" id="1_v5asj"]
+[ext_resource type="Resource" uid="uid://cubv0tqibo2he" path="res://Scripts/Data/DataType/Move/AttackMove_Crunch.tres" id="2_o1kit"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="4_1k3y4"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Stats.gd" id="5_wta80"]
+[ext_resource type="Resource" uid="uid://cmhu8fj1bisrw" path="res://Scripts/Data/Trait/Trait_Retaliate.tres" id="6_2v3p1"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Trait.gd" id="6_r1e8v"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="8_5q0qp"]
+
+[sub_resource type="Resource" id="Resource_d7y5f"]
+script = ExtResource("4_1k3y4")
+Move1 = ExtResource("2_o1kit")
+
+[sub_resource type="Resource" id="Resource_jysde"]
+script = ExtResource("5_wta80")
+HP = 55
+Damage = 2
+
+[resource]
+script = ExtResource("8_5q0qp")
+Name = "Gigapede"
+Face = ExtResource("1_v5asj")
+StatValues = SubResource("Resource_jysde")
+Moves = SubResource("Resource_d7y5f")
+Cost = 2
+UpgradeCost = 1
+Traits = Array[ExtResource("6_r1e8v")]([ExtResource("6_2v3p1")])
+Rarity = 0
+GivenNames = ""

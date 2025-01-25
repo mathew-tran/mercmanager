@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AttackMove" load_steps=5 format=3 uid="uid://cubv0tqibo2he"]
+
+[ext_resource type="Texture2D" uid="uid://cvoklpcno6wsl" path="res://Art/Projectiles/Crunch.png" id="1_oywyo"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveEffect.gd" id="2_ngxqv"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/AttackMove.gd" id="3_8fxsv"]
+
+[sub_resource type="Resource" id="Resource_ssryt"]
+script = ExtResource("2_ngxqv")
+MoveImage = ExtResource("1_oywyo")
+Duration = 0.5
+SpawnType = 1
+
+[resource]
+script = ExtResource("3_8fxsv")
+BaseDamage = 5
+DamageRange = 2
+HitAmount = 1
+Name = "Crunch"
+PercentChance = 70
+MoveDescription = "Viciously bites the target"
+MoveRange = 120
+TimeToActive = 0.6
+Effect = SubResource("Resource_ssryt")

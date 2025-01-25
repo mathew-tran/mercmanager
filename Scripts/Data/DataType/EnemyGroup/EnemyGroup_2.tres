@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyGroup" load_steps=4 format=3 uid="uid://dg7yw7wl442us"]
+
+[ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="1_2nxby"]
+[ext_resource type="Resource" uid="uid://crt6ps5heakn5" path="res://Scripts/Data/Enemies/GigaPede.tres" id="2_ay2we"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/EnemyGroup.gd" id="3_vc0xy"]
+
+[resource]
+script = ExtResource("3_vc0xy")
+Characters = Array[ExtResource("1_2nxby")]([ExtResource("2_ay2we")])

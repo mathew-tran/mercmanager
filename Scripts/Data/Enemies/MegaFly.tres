@@ -16,7 +16,7 @@ Move2 = ExtResource("3_07vju")
 
 [sub_resource type="Resource" id="Resource_wdmio"]
 script = ExtResource("2_a4ca2")
-HP = 25
+HP = 15
 Damage = 1
 
 [resource]
@@ -26,5 +26,7 @@ Face = ExtResource("1_cym4k")
 StatValues = SubResource("Resource_wdmio")
 Moves = SubResource("Resource_mg7n4")
 Cost = 2
+UpgradeCost = 1
 Traits = Array[ExtResource("1_auhcp")]([ExtResource("6_ogjuw")])
+Rarity = 0
 GivenNames = ""
