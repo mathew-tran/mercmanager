@@ -9,6 +9,7 @@ var Money = 5
 @export var ShopSlotDataRef : ShopSlotsData
 
 signal UpdateMoney
+signal StartRoundClicked
 
 func _ready():
 	PopulateStock()
@@ -50,3 +51,7 @@ func PopulateStock():
 		Stock.add_child(instance)
 	
 	UpdateMoney.emit()
+
+
+func _on_button_button_up():
+	StartRoundClicked.emit()

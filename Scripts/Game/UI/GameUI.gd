@@ -14,7 +14,6 @@ func OnTellGameState(state : BattleSystem.GAME_STATE):
 		print("Game Over!")
 		get_tree().reload_current_scene()
 
-
-func _on_button_button_up():
+func _on_shop_start_round_clicked():
 	$Shop.visible = false
 	Helper.GetBattleSystem().StartRound()

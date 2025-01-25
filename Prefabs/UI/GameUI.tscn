@@ -41,3 +41,5 @@ layer = 2
 
 [node name="CharacterStat" parent="CanvasLayer" instance=ExtResource("8_kih8a")]
 visible = false
+
+[connection signal="StartRoundClicked" from="Shop" to="." method="_on_shop_start_round_clicked"]
