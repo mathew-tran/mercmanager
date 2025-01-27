@@ -14,8 +14,8 @@ Move1 = ExtResource("2_ifpnw")
 
 [sub_resource type="Resource" id="Resource_m4fto"]
 script = ExtResource("4_iugxg")
-HP = 15
-Damage = 2
+HP = 45
+Damage = 4
 
 [resource]
 script = ExtResource("7_3em3t")

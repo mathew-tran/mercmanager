@@ -8,7 +8,6 @@ class_name CharacterInfo
 
 @export var Moves : MoveList
 @export var Cost = 1
-@export var UpgradeCost = 1
 @export var Traits : Array[Trait]
 @export var Rarity : RARITY
 

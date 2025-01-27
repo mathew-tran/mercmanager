@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AttackMove" load_steps=5 format=3 uid="uid://cehaasp4g8or5"]
+
+[ext_resource type="Texture2D" uid="uid://c7cg4vokanyf5" path="res://Art/Projectiles/Strike.png" id="1_tlcbh"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveEffect.gd" id="2_bdw77"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/AttackMove.gd" id="3_3vvma"]
+
+[sub_resource type="Resource" id="Resource_5i2li"]
+script = ExtResource("2_bdw77")
+MoveImage = ExtResource("1_tlcbh")
+Duration = 0.2
+SpawnType = 1
+
+[resource]
+script = ExtResource("3_3vvma")
+BaseDamage = 1
+DamageRange = 3
+HitAmount = 3
+Name = "Strike"
+PercentChance = 95
+MoveDescription = "Multi-slash weakest target"
+MoveRange = 120
+TimeToActive = 0.2
+Effect = SubResource("Resource_5i2li")
