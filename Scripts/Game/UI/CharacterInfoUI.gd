@@ -31,6 +31,7 @@ func UpdateInfo(charInfo : CharacterInfo):
 	$GridContainer/MoveInfoButton.Setup(charInfo.Moves.Move1)
 	$GridContainer/MoveInfoButton2.Setup(charInfo.Moves.Move2)
 	$Frame.UpdateRarity(charInfo.Rarity)
+	
 	for child in $TraitsPanel.get_children():
 		child.queue_free()
 	

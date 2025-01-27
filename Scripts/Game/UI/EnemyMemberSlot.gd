@@ -10,6 +10,7 @@ func Setup(character : CharacterInfo):
 		$Label.text = CharInfoRef.GetFullName()
 
 		$Frame.UpdateRarity(CharInfoRef.Rarity)
+		$Frame.ShowRarity(false)
 		$Frame.visible = true
 	else:
 		CharInfoRef = null

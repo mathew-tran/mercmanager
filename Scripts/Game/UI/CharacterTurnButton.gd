@@ -16,6 +16,8 @@ func Setup(charRef : Character):
 	charRef.ActiveUpdate.connect(OnActiveUpdate)
 	OnHealthUpdate()
 	
+	$Frame.ShowRarity(charRef.Team == Character.TEAM.PLAYER)
+	
 func OnHealthUpdate():
 	$HP.value = CharReference.GetHealthComponent().GetHealthPercent() * 100
 	$HP/Label.text = CharReference.GetHealthComponent().GetHealthString()

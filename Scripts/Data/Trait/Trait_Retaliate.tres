@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_lllrb")
 ExecutionTiming = 1
+Chance = 65
 Name = "Retalitate"
-Description = "Attacks when hit"
+Description = "Has a chance to attack when hit"
