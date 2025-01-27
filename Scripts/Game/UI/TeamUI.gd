@@ -7,7 +7,7 @@ class_name PlayerTeam
 
 var TeamSize = 6
 signal TeamUpdate
-
+		
 func _ready():
 	while len(Team) < TeamSize:
 		Team.append(null)
