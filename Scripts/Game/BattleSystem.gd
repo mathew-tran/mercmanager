@@ -66,10 +66,11 @@ func PlayGame():
 		
 		if IsEnemyDead():
 			CurrentState = GAME_STATE.PLAYER_WIN
+			var playerUnits = Helper.GetPlayerTeamUnits()
+			for unit in playerUnits:
+				await unit.RunTraitType(Trait.EXECUTION_TIME.AFTER_BATTLE)			
 			Helper.GetEnemySpawner().Increment()
 			Helper.GetShop().AddMoney(3)
-			
-			break
 			
 		index += 1
 		if index >= len(Characters.get_children()):

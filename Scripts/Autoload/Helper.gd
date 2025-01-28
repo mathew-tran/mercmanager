@@ -135,6 +135,7 @@ func CreateText(text, position):
 	instance.Setup(text)
 	instance.global_position = position
 	GetEffectsGroup().add_child(instance)
+	return instance
 	
 func GetAllFilePaths(path: String) -> Array[String]:
 	var file_paths: Array[String] = []

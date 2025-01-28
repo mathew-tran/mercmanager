@@ -7,7 +7,8 @@ class_name Trait
 
 enum EXECUTION_TIME {
 	AFTER_ATTACK,
-	AFTER_HIT
+	AFTER_HIT,
+	AFTER_BATTLE,
 }
 
 var ExecutionType : EXECUTION_TIME

@@ -51,7 +51,7 @@ func _process(delta):
 func RunAttackAI(delta):
 	var validTargets = MoveToUse.GetTargets(CharRef)
 	
-	if len(validTargets) > 0:
+	if len(validTargets) > 0 and validTargets[0] != null:
 		var nearestEnemy = Helper.GetClosestUnitInGroup(validTargets, CharRef, true)
 		if IsCloseToPosition(CharRef, nearestEnemy.global_position) == false:
 			MoveToPosition(CharRef, nearestEnemy.global_position, delta)
@@ -69,15 +69,16 @@ func SetAIState(aiState : AI_STATE):
 	if CurrentState == AI_STATE.ATTACK:
 		MoveToUse = CharRef.CharacterData.Moves.DecideRandomMove()
 	
-func RunTrait(traitType : Trait.EXECUTION_TIME):
+func RunTrait(traitType : Trait.EXECUTION_TIME, bIsAliveCheck = true):
 	for charTrait in CharRef.CharacterData.Traits:
 		if charTrait.ExecutionType == traitType:
-			if CharRef.GetHealthComponent().IsAlive() == false:
-				return
-			CharRef.Speak("!!!")
+			if bIsAliveCheck:
+				if CharRef.GetHealthComponent().IsAlive() == false:
+					return
 			CharRef.GetAI().Cleanup()
-			await get_tree().create_timer(1.2).timeout
 			print(CharRef.CharacterData.GetFullName() +  " runs trait " + charTrait.GetTraitText())
+			CharRef.Speak(charTrait.Name)
+			await get_tree().create_timer(1.0).timeout
 			await charTrait.Execute(CharRef)
 	
 func RunAwayAI(delta):

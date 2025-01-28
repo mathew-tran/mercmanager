@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TraitPlunder" load_steps=2 format=3 uid="uid://b0ly1rch7b73u"]
+
+[ext_resource type="Script" path="res://Scripts/Data/Trait/Trait_Plunder.gd" id="1_fnylo"]
+
+[resource]
+script = ExtResource("1_fnylo")
+ExecutionTiming = 2
+Chance = 100
+GoldAmount = 1
+Name = "Plunder"
+Description = "Gains 1 extra gold after battle"

@@ -34,16 +34,16 @@ func Setup():
 		StatValues.HP += randi_range(1, 4)
 	
 	var lastingTraits : Array[Trait]
-	var chanceToLose = randi_range(10, 50)
+	var chanceToGetSkill = randi_range(10, 50)
 	if Rarity == RARITY.RARE:
-		chanceToLose -= 20
+		chanceToGetSkill += 50
 	elif Rarity == RARITY.LEGENDARY:
-		chanceToLose -= 30
+		chanceToGetSkill += 80
 	for charTrait in Traits:
 		var result = randi_range(0, 100)
-		if result <= chanceToLose:
+		if result <= chanceToGetSkill:
 			lastingTraits.append(charTrait)
-			chanceToLose += 20
+			chanceToGetSkill -= 20
 			Cost += 1
 		
 	Traits = lastingTraits

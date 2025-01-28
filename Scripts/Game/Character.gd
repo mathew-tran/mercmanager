@@ -63,7 +63,7 @@ func RunInput():
 	await get_tree().create_timer(.4).timeout
 	$AIController.Run()
 	await $AIController.ActionComplete
-	await $AIController.RunTrait(Trait.EXECUTION_TIME.AFTER_ATTACK)
+	await RunTraitType(Trait.EXECUTION_TIME.AFTER_ATTACK, true)
 	
 	$AIController.bIsRunning = false
 	Speak("")
@@ -81,7 +81,9 @@ func ShowUI(bShow):
 		$HideUITimer.stop()
 		$CharacterUI.SetActive(true)
 	
-		
+	
+func RunTraitType(executionType : Trait.EXECUTION_TIME, bAliveCheck = true)	:
+	await $AIController.RunTrait(executionType, bAliveCheck)
 
 
 func _on_timer_timeout():
