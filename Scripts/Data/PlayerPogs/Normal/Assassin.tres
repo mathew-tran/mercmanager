@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterInfo" load_steps=9 format=3 uid="uid://dbv0fvji73rm2"]
+[gd_resource type="Resource" script_class="CharacterInfo" load_steps=10 format=3 uid="uid://dbv0fvji73rm2"]
 
 [ext_resource type="Script" path="res://Scripts/Data/DataType/Trait.gd" id="1_3anee"]
 [ext_resource type="Texture2D" uid="uid://bnjsoklph8ha0" path="res://Art/Characters/Assassin.png" id="1_kr4ug"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="2_exp31"]
 [ext_resource type="Resource" uid="uid://cehaasp4g8or5" path="res://Scripts/Data/DataType/Move/AttackMove_Strike.tres" id="2_ixl5d"]
 [ext_resource type="Script" path="res://Scripts/Data/DataType/MoveList.gd" id="3_tvt8w"]
+[ext_resource type="Resource" uid="uid://d4ku8fipsu71h" path="res://Scripts/Data/Trait/Trait_SideStep.tres" id="6_ii2hc"]
 
 [sub_resource type="Resource" id="Resource_w06lq"]
 script = ExtResource("3_tvt8w")
@@ -23,6 +24,6 @@ Face = ExtResource("1_kr4ug")
 StatValues = SubResource("Resource_uqs2e")
 Moves = SubResource("Resource_w06lq")
 Cost = 3
-Traits = Array[ExtResource("1_3anee")]([])
+Traits = Array[ExtResource("1_3anee")]([ExtResource("6_ii2hc")])
 Rarity = 1
 GivenNames = "Shade, Dagger, Thorn, Raven, Azrael, Knox, Korath, Fang, Bane, Vex, Blight, Wraith, Grim, Shade, Hex, Talon, Void, Veil, Flux, Cipher"

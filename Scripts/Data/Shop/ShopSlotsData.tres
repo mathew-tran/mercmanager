@@ -5,21 +5,21 @@
 
 [sub_resource type="Resource" id="Resource_mx5co"]
 script = ExtResource("1_18yj3")
-NormalChance = 100
-RareChance = 0
-LegendaryChance = 0
+NormalChance = 97
+RareChance = 2
+LegendaryChance = 1
 
 [sub_resource type="Resource" id="Resource_y5ce6"]
-script = ExtResource("1_18yj3")
-NormalChance = 99
-RareChance = 1
-LegendaryChance = 0
-
-[sub_resource type="Resource" id="Resource_w1ori"]
 script = ExtResource("1_18yj3")
 NormalChance = 95
 RareChance = 3
 LegendaryChance = 2
+
+[sub_resource type="Resource" id="Resource_w1ori"]
+script = ExtResource("1_18yj3")
+NormalChance = 93
+RareChance = 4
+LegendaryChance = 3
 
 [sub_resource type="Resource" id="Resource_glleb"]
 script = ExtResource("1_18yj3")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TraitSideStep" load_steps=2 format=3 uid="uid://d4ku8fipsu71h"]
+
+[ext_resource type="Script" path="res://Scripts/Data/Trait/Trait_SideStep.gd" id="1_6rwyv"]
+
+[resource]
+script = ExtResource("1_6rwyv")
+ExecutionTiming = 0
+Name = "Side Step"
+Description = "Teleport to random ally after attacking"

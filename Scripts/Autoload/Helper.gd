@@ -31,6 +31,20 @@ func GetAllyUnits(charRef : Character):
 		if unit.Team == charRef.Team and unit != charRef:
 			enemies.append(unit)
 	return enemies
+	
+func GetRandomAlly(charRef: Character, bIsAlive = true):
+	var units = GetAllyUnits(charRef)
+	var chosenUnits = []
+	for unit in units:
+		if unit.GetHealthComponent().IsAlive() == bIsAlive:
+			chosenUnits.append(unit)
+			
+	if len(chosenUnits) <= 0:
+		return null
+		
+	chosenUnits.shuffle()
+	return chosenUnits[0]
+	
 
 func GetClosestUnitInGroup(enemyGroup, charRef: Character, bIsAlive = true) -> Character:
 	var closestEnemy = null
