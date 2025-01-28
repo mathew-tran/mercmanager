@@ -2,10 +2,26 @@ extends Move
 
 class_name AttackMove
 
+enum TARGETING_TYPE {
+	CLOSEST,
+	LOWEST_HP,
+	HIGHEST_HP
+}
 @export var BaseDamage = 1
 @export var DamageRange = 0
 @export var HitAmount = 1
+@export var TargetingType = TARGETING_TYPE.CLOSEST
 
+func GetTargets(owner : Character) -> Array[Character]:
+	match TargetingType:
+		TARGETING_TYPE.CLOSEST:
+			return [Helper.GetClosestEnemy(owner, true)]
+		TARGETING_TYPE.LOWEST_HP:
+			return [Helper.GetLowestHPEnemy(owner, true)]
+		TARGETING_TYPE.HIGHEST_HP:
+			return [Helper.GetHighestHPEnemy(owner, true)]
+	return []
+	
 func Execute(owner : Character, targets : Array[Character]):
 	if HasMoveSucceeded():
 		for x in range(0, HitAmount):

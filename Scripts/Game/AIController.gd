@@ -49,14 +49,15 @@ func _process(delta):
 			RunAwayAI(delta)
 			
 func RunAttackAI(delta):
-	var nearestEnemy = Helper.GetClosestEnemy(CharRef)
-	if is_instance_valid(nearestEnemy):
-		nearestEnemy.ShowUI(true)
+	var validTargets = MoveToUse.GetTargets(CharRef)
+	
+	if len(validTargets) > 0:
+		var nearestEnemy = Helper.GetClosestUnitInGroup(validTargets, CharRef, true)
 		if IsCloseToPosition(CharRef, nearestEnemy.global_position) == false:
 			MoveToPosition(CharRef, nearestEnemy.global_position, delta)
 		else:
 			bIsRunning = false
-			await MoveToUse.AttemptToDoMove(CharRef, [nearestEnemy])
+			await MoveToUse.AttemptToDoMove(CharRef, validTargets)
 			ActionComplete.emit()
 			nearestEnemy.ShowUI(false)
 	else:

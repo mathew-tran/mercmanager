@@ -32,25 +32,76 @@ func GetAllyUnits(charRef : Character):
 			enemies.append(unit)
 	return enemies
 
-func GetClosestEnemy(charRef: Character, bIsAlive = true) -> Character:
-	var enemyUnits = GetEnemyUnits(charRef)
-	if len(enemyUnits) == 0:
-		return null
+func GetClosestUnitInGroup(enemyGroup, charRef: Character, bIsAlive = true) -> Character:
 	var closestEnemy = null
-	for enemy in enemyUnits:
+	for enemy in enemyGroup:
 		if enemy.GetHealthComponent().IsAlive() == bIsAlive:
 			closestEnemy = enemy
 			break
 	if closestEnemy == null:
 		return null
 	var closestDistance = charRef.global_position.distance_to(closestEnemy.global_position)
-	for enemy in enemyUnits:
+	for enemy in enemyGroup:
 		if enemy.GetHealthComponent().IsAlive() == bIsAlive:
 			var distance = enemy.global_position.distance_to(charRef.global_position)
 			if distance < closestDistance:
 				closestDistance = distance
 				closestEnemy = enemy
 	return closestEnemy
+	
+func GetLowestHPUnitInGroup(enemyGroup, charRef: Character, bIsAlive = true) -> Character:
+	var chosenEnemy = null
+	var lowestHealth = 999999999
+	for enemy in enemyGroup:
+		if enemy.GetHealthComponent().IsAlive() == bIsAlive:
+			chosenEnemy = enemy
+			lowestHealth = chosenEnemy.GetHealthComponent().Health
+			break
+	if chosenEnemy == null:
+		return null
+	for enemy in enemyGroup:
+		if enemy.GetHealthComponent().IsAlive() == bIsAlive:
+			var currentHealth = enemy.GetHealthComponent().Health
+			if lowestHealth > currentHealth:
+				lowestHealth = currentHealth
+				chosenEnemy = enemy
+	return chosenEnemy
+	
+func GetHighestHPUnitInGroup(enemyGroup, charRef: Character, bIsAlive = true) -> Character:
+	var chosenEnemy = null
+	var highestHealth = -999999999
+	for enemy in enemyGroup:
+		if enemy.GetHealthComponent().IsAlive() == bIsAlive:
+			chosenEnemy = enemy
+			highestHealth = chosenEnemy.GetHealthComponent().Health
+			break
+	if chosenEnemy == null:
+		return null
+	for enemy in enemyGroup:
+		if enemy.GetHealthComponent().IsAlive() == bIsAlive:
+			var currentHealth = enemy.GetHealthComponent().Health
+			if highestHealth < currentHealth:
+				highestHealth = currentHealth
+				chosenEnemy = enemy
+	return chosenEnemy
+
+func GetHighestHPEnemy(charRef: Character, bIsAlive = true) -> Character:
+	var enemyUnits = GetEnemyUnits(charRef)
+	if len(enemyUnits) == 0:
+		return null
+	return GetHighestHPUnitInGroup(enemyUnits, charRef, bIsAlive)
+		
+func GetLowestHPEnemy(charRef: Character, bIsAlive = true) -> Character:
+	var enemyUnits = GetEnemyUnits(charRef)
+	if len(enemyUnits) == 0:
+		return null
+	return GetLowestHPUnitInGroup(enemyUnits, charRef, bIsAlive)
+	
+func GetClosestEnemy(charRef: Character, bIsAlive = true) -> Character:
+	var enemyUnits = GetEnemyUnits(charRef)
+	if len(enemyUnits) == 0:
+		return null
+	return GetClosestUnitInGroup(enemyUnits, charRef, bIsAlive)
 		
 func GetFollowCamera() -> FollowCamera:
 	var camera = get_tree().get_nodes_in_group("FollowCamera")
