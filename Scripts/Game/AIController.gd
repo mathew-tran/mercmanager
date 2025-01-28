@@ -80,6 +80,7 @@ func RunTrait(traitType : Trait.EXECUTION_TIME, bIsAliveCheck = true):
 			CharRef.Speak(charTrait.Name)
 			await get_tree().create_timer(1.0).timeout
 			await charTrait.Execute(CharRef)
+			CharRef.Speak("")
 	
 func RunAwayAI(delta):
 	var nearestEnemy = Helper.GetClosestEnemy(CharRef)
