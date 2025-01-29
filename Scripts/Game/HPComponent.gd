@@ -32,6 +32,7 @@ func Heal(amount):
 	Health += amount
 	if Health >= MaxHealth:
 		Health = MaxHealth
+	Health = floor(Health)
 	Update.emit()
 	
 func TakeDamage(amount):

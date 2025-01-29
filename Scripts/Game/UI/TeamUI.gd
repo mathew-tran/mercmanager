@@ -5,7 +5,7 @@ class_name PlayerTeam
 @onready var TeamSlots = $GridContainer
 @export var Team : Array[CharacterInfo]
 
-var TeamSize = 6
+var TeamSize = 5
 signal TeamUpdate
 		
 func _ready():
