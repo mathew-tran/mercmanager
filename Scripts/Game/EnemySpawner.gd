@@ -8,6 +8,7 @@ signal EnemySpawnerUpdate
 func _ready():
 	GroupList = Helper.GetAllFilePaths("res://Scripts/Data/DataType/EnemyGroup/")
 	Index = 0
+	#GroupList.reverse()
 	
 	print(GroupList[Index])
 	EnemySpawnerUpdate.emit()

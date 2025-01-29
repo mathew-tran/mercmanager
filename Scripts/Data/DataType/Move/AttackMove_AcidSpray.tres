@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="AttackMove" load_steps=5 format=3 uid="uid://n6vney478nt3"]
+
+[ext_resource type="Texture2D" uid="uid://duyum7ssy4m25" path="res://Art/Projectiles/AcidSpray.png" id="1_f8c46"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/MoveEffect.gd" id="2_qrf4m"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/AttackMove.gd" id="3_o3bvx"]
+
+[sub_resource type="Resource" id="Resource_jvmng"]
+script = ExtResource("2_qrf4m")
+MoveImage = ExtResource("1_f8c46")
+Duration = 0.2
+SpawnType = 0
+
+[resource]
+script = ExtResource("3_o3bvx")
+BaseDamage = 1
+DamageRange = 1
+HitAmount = 3
+EnemyCount = 3
+TargetingType = 3
+Name = "Acid Spray"
+PercentChance = 70
+MoveDescription = "Sprays acid upto 3 random targets"
+MoveRange = 300
+TimeToActive = 0.2
+Effect = SubResource("Resource_jvmng")

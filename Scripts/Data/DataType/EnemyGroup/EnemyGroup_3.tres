@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyGroup" load_steps=5 format=3 uid="uid://bt4bjpldf8et4"]
+
+[ext_resource type="Script" path="res://Scripts/Data/DataType/CharacterInfo.gd" id="1_flp21"]
+[ext_resource type="Resource" uid="uid://c42vux47d5d3u" path="res://Scripts/Data/Enemies/RolloBug.tres" id="2_n2i6e"]
+[ext_resource type="Resource" uid="uid://crs2rmjl43k3h" path="res://Scripts/Data/Enemies/MegaFly.tres" id="2_prfcd"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/EnemyGroup.gd" id="3_ih8u8"]
+
+[resource]
+script = ExtResource("3_ih8u8")
+Characters = Array[ExtResource("1_flp21")]([ExtResource("2_n2i6e"), ExtResource("2_prfcd"), ExtResource("2_prfcd")])

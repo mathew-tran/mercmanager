@@ -8,12 +8,17 @@ var MaxHealth = 0
 signal Update
 signal TakenDamage
 signal OnDeath
+signal Armored(bSet)
 var CharRef : Character
+
+var bIsArmored = false
+
 func Setup(char : Character):
 	Health = char.CharacterData.StatValues.HP
 	MaxHealth = Health
 	CharRef = char
 	Update.emit()
+	SetArmored(false)
 	
 func GetHealthString():
 	if Health <= 0:
@@ -30,6 +35,11 @@ func Heal(amount):
 	Update.emit()
 	
 func TakeDamage(amount):
+	if bIsArmored:
+		bIsArmored = false
+		amount /= 2
+		amount = round(amount)
+		Armored.emit(bIsArmored)
 	Health -= amount
 	Update.emit()
 	TakenDamage.emit()
@@ -39,5 +49,12 @@ func TakeDamage(amount):
 	
 	print(CharRef.CharacterData.GetFullName() + " takes " + str(amount) + " damage")
 
+func IsArmored():
+	return bIsArmored
+	
+func SetArmored(bSet):
+	bIsArmored = bSet
+	Armored.emit(bIsArmored)
+	
 func IsAlive():
 	return Health > 0

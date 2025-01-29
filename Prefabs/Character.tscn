@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnvuj4natuhv0"]
+[gd_scene load_steps=14 format=3 uid="uid://dnvuj4natuhv0"]
 
 [ext_resource type="Texture2D" uid="uid://c2a62auhmc77c" path="res://Art/Characters/Barbarian.png" id="1_oxqv2"]
 [ext_resource type="Script" path="res://Scripts/Game/Character.gd" id="1_vsemf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Game/UI/CharacterUI.gd" id="4_a23w2"]
 [ext_resource type="PackedScene" uid="uid://bpeqmlf4rw473" path="res://Prefabs/SpeechBubble.tscn" id="5_755dl"]
 [ext_resource type="Script" path="res://Scripts/Game/HPComponent.gd" id="5_jpujw"]
+[ext_resource type="Texture2D" uid="uid://b3hoc45tg8ddx" path="res://Art/StatusIcons/Shielded.png" id="6_cvrrw"]
 [ext_resource type="Script" path="res://Scripts/Game/AIController.gd" id="7_601cj"]
 [ext_resource type="Texture2D" uid="uid://cog2etxitefhp" path="res://Art/UI/ActiveSymbol.png" id="8_w3083"]
 
@@ -133,6 +134,27 @@ offset_bottom = -93.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="Statuses" type="HBoxContainer" parent="CharacterUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -105.5
+offset_right = 540.5
+offset_bottom = 6.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Shielded" type="TextureRect" parent="CharacterUI/Statuses"]
+layout_mode = 2
+texture = ExtResource("6_cvrrw")
+
 [node name="HPComponent" type="Node" parent="."]
 script = ExtResource("5_jpujw")
 
@@ -155,6 +177,7 @@ one_shot = true
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickCollision"]
 shape = SubResource("CircleShape2D_yt7r0")

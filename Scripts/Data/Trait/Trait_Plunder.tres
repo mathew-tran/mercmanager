@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TraitPlunder" load_steps=2 format=3 uid="uid://b0ly1rch7b73u"]
 
-[ext_resource type="Script" path="res://Scripts/Data/Trait/Trait_Plunder.gd" id="1_fnylo"]
+[ext_resource type="Script" path="res://Scripts/Data/DataType/Trait_Plunder.gd" id="1_fnylo"]
 
 [resource]
 script = ExtResource("1_fnylo")

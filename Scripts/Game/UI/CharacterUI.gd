@@ -10,6 +10,7 @@ func Setup(char : Character):
 	char.GetHealthComponent().Setup(char)
 	char.GetHealthComponent().Update.connect(OnUpdate)
 	char.GetHealthComponent().OnDeath.connect(OnDeath)
+	char.GetHealthComponent().Armored.connect(OnArmored)
 		
 	$ActiveUI/Frame.ShowRarity(char.Team == Character.TEAM.PLAYER)
 	OnUpdate()
@@ -17,6 +18,9 @@ func Setup(char : Character):
 	
 func SetActive(bActive):
 	$ActiveUI.visible = bActive
+	
+func OnArmored(bArmored):
+	$Statuses/Shielded.visible = bArmored
 	
 func OnUpdate():
 	$ActiveUI/HP/Label.text = CharacterRef.GetHealthComponent().GetHealthString()

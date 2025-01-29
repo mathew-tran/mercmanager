@@ -13,7 +13,7 @@ var Targets : Array[Character]
 
 signal MoveCompleted
 
-func AttemptToDoMove(owner : Character, targets : Array[Character]):
+func AttemptToDoMove(owner : Character, targets):
 	owner.Speak(Name)
 	await owner.get_tree().create_timer(.5).timeout
 	await Execute(owner, targets)
@@ -25,5 +25,5 @@ func HasMoveSucceeded():
 func GetDamageValueText():
 	return ""
 	
-func Execute(owner : Character, targets : Array[Character]):
+func Execute(owner : Character, targets):
 	pass

@@ -24,7 +24,6 @@ Face = ExtResource("1_v5asj")
 StatValues = SubResource("Resource_jysde")
 Moves = SubResource("Resource_d7y5f")
 Cost = 2
-UpgradeCost = 1
 Traits = Array[ExtResource("6_r1e8v")]([ExtResource("6_2v3p1")])
 Rarity = 0
 GivenNames = ""

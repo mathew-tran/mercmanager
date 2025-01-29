@@ -12,6 +12,7 @@ func Setup():
 func Execute(charRef : Character):
 	var result = randi() % 100
 	if result <= Chance:
+		charRef.Speak(Name)
 		Helper.GetShop().AddMoney(GoldAmount)
 		print("Gain " + str(GoldAmount) + " from " + str(Name))
 		var text = "+" + str(GoldAmount) + " GOLD"

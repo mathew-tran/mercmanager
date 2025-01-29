@@ -116,6 +116,20 @@ func GetClosestEnemy(charRef: Character, bIsAlive = true) -> Character:
 	if len(enemyUnits) == 0:
 		return null
 	return GetClosestUnitInGroup(enemyUnits, charRef, bIsAlive)
+
+func GetRandomEnemies(charRef: Character, bIsAlive = true, enemyAmount = 3):
+	var amount = enemyAmount
+	var randomChosenUnits = []
+	var enemyUnits = GetEnemyUnits(charRef)
+	if len(enemyUnits) == 0:
+		return []
+	enemyUnits.shuffle()
+	while enemyUnits.size() > 0 and amount > 0:
+		var enemy = enemyUnits.pop_back()
+		if enemy.GetHealthComponent().IsAlive() == bIsAlive:
+			randomChosenUnits.append(enemy)
+			amount -= 1
+	return randomChosenUnits
 		
 func GetFollowCamera() -> FollowCamera:
 	var camera = get_tree().get_nodes_in_group("FollowCamera")

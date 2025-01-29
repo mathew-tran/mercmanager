@@ -5,14 +5,16 @@ class_name AttackMove
 enum TARGETING_TYPE {
 	CLOSEST,
 	LOWEST_HP,
-	HIGHEST_HP
+	HIGHEST_HP,
+	RANDOM
 }
 @export var BaseDamage = 1
 @export var DamageRange = 0
 @export var HitAmount = 1
+@export var EnemyCount = 1
 @export var TargetingType = TARGETING_TYPE.CLOSEST
 
-func GetTargets(owner : Character) -> Array[Character]:
+func GetTargets(owner : Character):
 	match TargetingType:
 		TARGETING_TYPE.CLOSEST:
 			return [Helper.GetClosestEnemy(owner, true)]
@@ -20,12 +22,14 @@ func GetTargets(owner : Character) -> Array[Character]:
 			return [Helper.GetLowestHPEnemy(owner, true)]
 		TARGETING_TYPE.HIGHEST_HP:
 			return [Helper.GetHighestHPEnemy(owner, true)]
+		TARGETING_TYPE.RANDOM:
+			return Helper.GetRandomEnemies(owner, true, EnemyCount)
 	return []
 	
-func Execute(owner : Character, targets : Array[Character]):
+func Execute(owner : Character, targets):
 	if HasMoveSucceeded():
-		for x in range(0, HitAmount):
-			for target in targets:
+		for target in targets:
+			for x in range(0, HitAmount):
 				if owner.GetHealthComponent().IsAlive() == false: # This is to cover incase target retaliates or move hurts user
 					return
 				if is_instance_valid(Effect):
@@ -45,8 +49,8 @@ func Execute(owner : Character, targets : Array[Character]):
 					await target.GetAI().RunTrait(Trait.EXECUTION_TIME.AFTER_HIT)
 	else:
 		await owner.Speak("MISSED")
-		await owner.get_tree().create_timer(.4).timeout
-		await owner.Speak("")		
+	await owner.get_tree().create_timer(.4).timeout
+	await owner.Speak("")		
 
 func CalculateDamage(owner: Character):
 	var damage = BaseDamage	

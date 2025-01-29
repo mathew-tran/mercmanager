@@ -15,6 +15,7 @@ script = ExtResource("3_8fxsv")
 BaseDamage = 5
 DamageRange = 2
 HitAmount = 1
+TargetingType = 0
 Name = "Crunch"
 PercentChance = 70
 MoveDescription = "Viciously bites the target"

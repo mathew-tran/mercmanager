@@ -49,6 +49,9 @@ func _process(delta):
 			RunAwayAI(delta)
 			
 func RunAttackAI(delta):
+	if is_instance_valid(MoveToUse) == false:
+		ActionComplete.emit()
+		return
 	var validTargets = MoveToUse.GetTargets(CharRef)
 	
 	if len(validTargets) > 0 and validTargets[0] != null:
@@ -59,7 +62,6 @@ func RunAttackAI(delta):
 			bIsRunning = false
 			await MoveToUse.AttemptToDoMove(CharRef, validTargets)
 			ActionComplete.emit()
-			nearestEnemy.ShowUI(false)
 	else:
 		ActionComplete.emit()
 
@@ -77,10 +79,8 @@ func RunTrait(traitType : Trait.EXECUTION_TIME, bIsAliveCheck = true):
 					return
 			CharRef.GetAI().Cleanup()
 			print(CharRef.CharacterData.GetFullName() +  " runs trait " + charTrait.GetTraitText())
-			CharRef.Speak(charTrait.Name)
-			await get_tree().create_timer(1.0).timeout
+
 			await charTrait.Execute(CharRef)
-			CharRef.Speak("")
 	
 func RunAwayAI(delta):
 	var nearestEnemy = Helper.GetClosestEnemy(CharRef)

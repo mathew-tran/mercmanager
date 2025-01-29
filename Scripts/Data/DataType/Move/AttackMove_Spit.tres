@@ -15,6 +15,7 @@ script = ExtResource("3_ttc8a")
 BaseDamage = 1
 DamageRange = 1
 HitAmount = 5
+EnemyCount = 1
 TargetingType = 2
 Name = "Spit"
 PercentChance = 85
